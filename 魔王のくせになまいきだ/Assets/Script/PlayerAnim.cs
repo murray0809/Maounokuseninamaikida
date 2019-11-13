@@ -13,6 +13,7 @@ public class PlayerAnim : MonoBehaviour
     void Update()
     {
         float horizontalKey = Input.GetAxis("Horizontal");
+        float VerticalKey = Input.GetAxis("Vertical");
         if (horizontalKey > 0)
         {
             transform.localScale = new Vector3(-3, 3, 1);
@@ -22,6 +23,16 @@ public class PlayerAnim : MonoBehaviour
         {
             transform.localScale = new Vector3(3, 3, 1);
             anim.SetBool("walk", true);
+        }
+        else if (VerticalKey < 0)
+        {
+            transform.localScale = new Vector3(3, 3, 1);
+            anim.SetBool("walk", true);
+        }
+        else if (VerticalKey > 0)
+        {
+            transform.localScale = new Vector3(3, 3, 1);
+            anim.SetBool("walk back", true);
         }
         else
         {
