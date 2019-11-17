@@ -37,6 +37,7 @@ public class PlayerAnim : MonoBehaviour
         else
         {
             anim.SetBool("walk", false);
+            anim.SetBool("walk back", false);
         }
     }
 }
