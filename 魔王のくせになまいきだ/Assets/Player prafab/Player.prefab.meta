@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: fea1e7bc4cea6364e9321d0109a8732b
-labels:
-- 2D
-- Pixelart
-- Tileset
-- Dungeon
-- Tiles
-- Retro
+guid: c40685abafd59e149a1561f60c5f0ae4
 PrefabImporter:
   externalObjects: {}
   userData: 

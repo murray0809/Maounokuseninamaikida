@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int Def = 25; //防御力
     [SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
+    [SerializeField] GameObject attack;
     void Start()
     {
         m_rb2d = GetComponent<Rigidbody2D>();
@@ -24,5 +25,14 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");     // 水平方向の入力を取得する
         Vector2 dir = new Vector2(h, v).normalized; // 進行方向の単位ベクトルを作る (dir = direction) 
         m_rb2d.velocity = dir * m_moveSpeed;        // 単位ベクトルにスピードをかけて速度ベクトルにして、それを Rigidbody の速度ベクトルとしてセットする
+
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+        {
+            attack.SetActive(true);
+        }
+        else
+        {
+            attack.SetActive(false);
+        }
     }
 }
