@@ -1,5 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using System;
+using System.IO;
 
 [CustomEditor(typeof(Dungeonizer))] 	
 public class DungeonizerEditor : Editor {
@@ -13,9 +15,12 @@ public class DungeonizerEditor : Editor {
 		Dungeonizer realscript = (Dungeonizer)target;
 
 		if(GUILayout.Button("Create Now")) {
-			//add everthing the button would do.
-			realscript.ClearOldDungeon(true);
-			realscript.Generate();
+            //add everthing the button would do.
+            Entity_Sheet1 es = Resources.Load("Dungeon") as Entity_Sheet1;
+            GameObject floor = (GameObject)Resources.Load(es.sheets[0].list[0].floor);
+            GameObject wall = (GameObject)Resources.Load(es.sheets[0].list[0].wall);
+            realscript.ClearOldDungeon(true);
+			realscript.Generate(floor, wall);
 			
 		}
 	}
