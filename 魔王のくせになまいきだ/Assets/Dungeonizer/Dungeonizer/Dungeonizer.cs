@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.AI;
+using System;
+using System.IO;
+using Random = UnityEngine.Random;
 
 public class Room {
 	public int x = 0;
@@ -547,7 +550,7 @@ public class Dungeonizer : MonoBehaviour {
 	}
 
 
-	public void Generate()
+	public void Generate(GameObject floor, GameObject wall)
 	{
 		Dungeon dungeon = new Dungeon ();
 		
@@ -585,7 +588,7 @@ public class Dungeonizer : MonoBehaviour {
 						}
 					}
 
-					created_tile = GameObject.Instantiate (floorPrefabToUse, tile_location, Quaternion.identity) as GameObject;
+					created_tile = GameObject.Instantiate (floor, tile_location, Quaternion.identity) as GameObject;
 				}
 				
 				if ( Dungeon.walls.Contains(tile)) {
@@ -600,7 +603,7 @@ public class Dungeonizer : MonoBehaviour {
 						}
 					}
 
-					created_tile = GameObject.Instantiate (wallPrefabToUse, tile_location, Quaternion.identity) as GameObject;
+					created_tile = GameObject.Instantiate (wall, tile_location, Quaternion.identity) as GameObject;
 					if(!makeIt3d){
 						created_tile.transform.Rotate(Vector3.forward  * (-90 * (tile -4)));
 					}
@@ -925,9 +928,12 @@ public class Dungeonizer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		if (generate_on_load){
+        Entity_Sheet1 es = Resources.Load("Dungeon") as Entity_Sheet1;
+        GameObject floor = (GameObject)Resources.Load(es.sheets[0].list[0].floor);
+        GameObject wall = (GameObject)Resources.Load(es.sheets[0].list[0].wall);
+        if (generate_on_load){
 			ClearOldDungeon();
-			Generate();
+			Generate(floor, wall);
 
         }
 	}
