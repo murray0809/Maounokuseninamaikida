@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
-using System;
-using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.AI;
-using Random = UnityEngine.Random;
 
 public class Room {
 	public int x = 0;
@@ -550,10 +547,10 @@ public class Dungeonizer : MonoBehaviour {
 	}
 
 
-	public void Generate(GameObject floor, GameObject wall)
+	public void Generate()
 	{
 		Dungeon dungeon = new Dungeon ();
-
+		
 		dungeon.min_size = minRoomSize;
 		dungeon.max_size = maxRoomSize;
 		dungeon.maximumRoomCount = maximumRoomCount;
@@ -588,7 +585,7 @@ public class Dungeonizer : MonoBehaviour {
 						}
 					}
 
-					created_tile = GameObject.Instantiate (floor, tile_location, Quaternion.identity) as GameObject;
+					created_tile = GameObject.Instantiate (floorPrefabToUse, tile_location, Quaternion.identity) as GameObject;
 				}
 				
 				if ( Dungeon.walls.Contains(tile)) {
@@ -603,7 +600,7 @@ public class Dungeonizer : MonoBehaviour {
 						}
 					}
 
-					created_tile = GameObject.Instantiate (wall, tile_location, Quaternion.identity) as GameObject;
+					created_tile = GameObject.Instantiate (wallPrefabToUse, tile_location, Quaternion.identity) as GameObject;
 					if(!makeIt3d){
 						created_tile.transform.Rotate(Vector3.forward  * (-90 * (tile -4)));
 					}
@@ -619,7 +616,7 @@ public class Dungeonizer : MonoBehaviour {
                     }
                     else
                     {
-                        created_tile = GameObject.Instantiate(corridorFloorPrefab, tile_location, Quaternion.identity) as GameObject;
+                        created_tile = GameObject.Instantiate(floorPrefab, tile_location, Quaternion.identity) as GameObject;
                     }
 
                     if (orientation == 1 && makeIt3d)
@@ -654,7 +651,7 @@ public class Dungeonizer : MonoBehaviour {
 						}
 					}
 					else{
-						created_tile = GameObject.Instantiate (cornerPrefabToUse, tile_location, Quaternion.identity) as GameObject;
+						created_tile = GameObject.Instantiate (wallPrefab, tile_location, Quaternion.identity) as GameObject;
 					}
 				}
 				
@@ -928,12 +925,9 @@ public class Dungeonizer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Entity_Sheet1 es = Resources.Load("Dungeon") as Entity_Sheet1;
-        GameObject floor = (GameObject)Resources.Load(es.sheets[0].list[0].floor);
-        GameObject wall = (GameObject)Resources.Load(es.sheets[0].list[0].wall);
-        if (generate_on_load){
+		if (generate_on_load){
 			ClearOldDungeon();
-			Generate(floor, wall);
+			Generate();
 
         }
 	}
