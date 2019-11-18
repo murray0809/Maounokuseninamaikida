@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using System;
-using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine.AI;
+using System;
+using System.IO;
 using Random = UnityEngine.Random;
 
 public class Room {
@@ -553,7 +553,7 @@ public class Dungeonizer : MonoBehaviour {
 	public void Generate(GameObject floor, GameObject wall)
 	{
 		Dungeon dungeon = new Dungeon ();
-
+		
 		dungeon.min_size = minRoomSize;
 		dungeon.max_size = maxRoomSize;
 		dungeon.maximumRoomCount = maximumRoomCount;
@@ -619,7 +619,7 @@ public class Dungeonizer : MonoBehaviour {
                     }
                     else
                     {
-                        created_tile = GameObject.Instantiate(corridorFloorPrefab, tile_location, Quaternion.identity) as GameObject;
+                        created_tile = GameObject.Instantiate(floorPrefab, tile_location, Quaternion.identity) as GameObject;
                     }
 
                     if (orientation == 1 && makeIt3d)
@@ -654,7 +654,7 @@ public class Dungeonizer : MonoBehaviour {
 						}
 					}
 					else{
-						created_tile = GameObject.Instantiate (cornerPrefabToUse, tile_location, Quaternion.identity) as GameObject;
+						created_tile = GameObject.Instantiate (wallPrefab, tile_location, Quaternion.identity) as GameObject;
 					}
 				}
 				

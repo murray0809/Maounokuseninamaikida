@@ -1,7 +1,5 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using System;
-using System.IO;
 
 [CustomEditor(typeof(Dungeonizer))] 	
 public class DungeonizerEditor : Editor {
