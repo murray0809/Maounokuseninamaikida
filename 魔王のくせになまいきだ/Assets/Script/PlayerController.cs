@@ -12,19 +12,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
     [SerializeField] GameObject attack;
+
+    Vector3 MOVEX = new Vector3(0.64f, 0, 0); // x軸方向に１マス移動するときの距離
+    Vector3 MOVEY = new Vector3(0, 0.64f, 0); // y軸方向に１マス移動するときの距離
+
+    float step = 2f;     // 移動速度
+    Vector3 target;      // 入力受付時、移動後の位置を算出して保存 
+    Vector3 prevPos;     // 何らかの理由で移動できなかった場合、元の位置に戻すため移動前の位置を保存
+
+    Animator animator;   // アニメーション
     void Start()
     {
         m_rb2d = GetComponent<Rigidbody2D>();
+        target = transform.position;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 自機を移動させる
-        float h = Input.GetAxisRaw("Horizontal");   // 垂直方向の入力を取得する
-        float v = Input.GetAxisRaw("Vertical");     // 水平方向の入力を取得する
-        Vector2 dir = new Vector2(h, v).normalized; // 進行方向の単位ベクトルを作る (dir = direction) 
-        m_rb2d.velocity = dir * m_moveSpeed;        // 単位ベクトルにスピードをかけて速度ベクトルにして、それを Rigidbody の速度ベクトルとしてセットする
+        // ① 移動中かどうかの判定。移動中でなければ入力を受付
+        if (transform.position == target)
+        {
+            SetTargetPosition();
+        }
+        Move();
 
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
@@ -34,5 +46,47 @@ public class PlayerController : MonoBehaviour
         {
             attack.SetActive(false);
         }
+    }
+
+    void SetTargetPosition()
+    {
+
+        prevPos = target;
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            target = transform.position + MOVEX;
+            SetAnimationParam(1);
+            return;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            target = transform.position - MOVEX;
+            SetAnimationParam(2);
+            return;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            target = transform.position + MOVEY;
+            SetAnimationParam(3);
+            return;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            target = transform.position - MOVEY;
+            SetAnimationParam(0);
+            return;
+        }
+    }
+
+    void SetAnimationParam(int param)
+    {
+        animator.SetInteger("WalkParam", param);
+    }
+
+    // ③ 目的地へ移動する
+    void Move()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target, step * Time.deltaTime);
     }
 }
