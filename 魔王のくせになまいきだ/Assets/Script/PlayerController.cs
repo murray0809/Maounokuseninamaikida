@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
-            attack.SetActive(true);
+            Attack();
         }
         else
         {
@@ -88,5 +88,11 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, step * Time.deltaTime);
+    }
+
+    void Attack()
+    {
+        attack.SetActive(true);
+        Debug.Log("攻撃した");
     }
 }
