@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] public int Hp = 100; //HP
-    [SerializeField] public int Atk = 30; //攻撃力
-    [SerializeField] public int Def = 25; //防御力
+    [SerializeField] public int Hp = 10; //HP
+    [SerializeField] public int Atk = 1; //攻撃力
+    [SerializeField] public int Def = 0; //防御力
     [SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
     [SerializeField] GameObject attack;
@@ -56,32 +56,23 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             target = transform.position + MOVEX;
-            SetAnimationParam(1);
             return;
         }
         if (Input.GetKey(KeyCode.A))
         {
             target = transform.position - MOVEX;
-            SetAnimationParam(2);
             return;
         }
         if (Input.GetKey(KeyCode.W))
         {
             target = transform.position + MOVEY;
-            SetAnimationParam(3);
             return;
         }
         if (Input.GetKey(KeyCode.S))
         {
             target = transform.position - MOVEY;
-            SetAnimationParam(0);
             return;
         }
-    }
-
-    void SetAnimationParam(int param)
-    {
-        animator.SetInteger("WalkParam", param);
     }
 
     // ③ 目的地へ移動する
@@ -94,5 +85,22 @@ public class PlayerController : MonoBehaviour
     {
         attack.SetActive(true);
         Debug.Log("攻撃した");
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Item HP")
+        {
+            Hp++;
+        }
+
+        if (col.gameObject.tag == "Item ATK")
+        {
+            Atk++;
+        }
+
+        if (col.gameObject.tag == "Item DEF")
+        {
+            Def++;
+        }
     }
 }
