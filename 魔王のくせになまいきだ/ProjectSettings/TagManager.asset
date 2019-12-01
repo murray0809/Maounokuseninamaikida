@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item Hp
+  - Item Atk
+  - Item Def
   layers:
   - Default
   - TransparentFX
