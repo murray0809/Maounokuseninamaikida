@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] int Hp = 100; //HP
-    [SerializeField] int Atk = 30; //攻撃力
-    [SerializeField] int Def = 25; //防御力
+    [SerializeField] public int Hp = 100; //HP
+    [SerializeField] public int Atk = 30; //攻撃力
+    [SerializeField] public int Def = 25; //防御力
     [SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
     [SerializeField] GameObject attack;
