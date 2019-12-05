@@ -42,7 +42,7 @@ public class SpawnOption {
     //public bool byCorridor;
     public float heightFix = 0;
 
-    public GameObject gameObject;
+    public string gameObject;
 	[Tooltip("Use 0 for random room, make sure spawn room isnt bigger than your room count")]
 	public int spawnRoom = 0;
 }
@@ -65,7 +65,8 @@ public class MapTile {
 
 
 public class Dungeonizer : MonoBehaviour {
-	public GameObject startPrefab;
+    
+    public GameObject startPrefab;
 	public GameObject exitPrefab;
 	public List<SpawnList> spawnedObjectLocations = new List<SpawnList>();
 	public GameObject floorPrefab;
@@ -86,8 +87,8 @@ public class Dungeonizer : MonoBehaviour {
 	public int minRoomSize = 5;
 	public int maxRoomSize = 10;
 	public float tileScaling = 1f;
-	public List<SpawnOption> spawnOptions = new List<SpawnOption>();
-	public List<CustomRoom> customRooms = new List<CustomRoom> ();
+    List<Entity_Sheet2.Param> spawnOptions = new List<Entity_Sheet2.Param>();
+    public List<CustomRoom> customRooms = new List<CustomRoom> ();
 	public bool makeIt3d = false;
 
     //public NavMeshSurface surface;
@@ -550,17 +551,22 @@ public class Dungeonizer : MonoBehaviour {
 	}
 
 
-	public void Generate(GameObject floor, GameObject wall)
+	public void Generate()
 	{
 		Dungeon dungeon = new Dungeon ();
-		
-		dungeon.min_size = minRoomSize;
+        Entity_Sheet1 es = Resources.Load("floor") as Entity_Sheet1;
+        GameObject floor = (GameObject)Resources.Load(es.sheets[0].list[0].floor);
+        GameObject wall = (GameObject)Resources.Load(es.sheets[0].list[0].wall);
+
+
+        dungeon.min_size = minRoomSize;
 		dungeon.max_size = maxRoomSize;
 		dungeon.maximumRoomCount = maximumRoomCount;
 		dungeon.roomMargin = roomMargin;
 		
 		dungeon.Generate ();
-		
+
+       
 		//Dungeon.map = floodFill(Dungeon.map,1,1); //old test code,i am keeping this as a trophy
 		
 		for (var y = 0; y < Dungeon.map_size_y; y++) {
@@ -619,7 +625,7 @@ public class Dungeonizer : MonoBehaviour {
                     }
                     else
                     {
-                        created_tile = GameObject.Instantiate(floorPrefab, tile_location, Quaternion.identity) as GameObject;
+                        created_tile = GameObject.Instantiate(floor, tile_location, Quaternion.identity) as GameObject;
                     }
 
                     if (orientation == 1 && makeIt3d)
@@ -654,7 +660,7 @@ public class Dungeonizer : MonoBehaviour {
 						}
 					}
 					else{
-						created_tile = GameObject.Instantiate (wallPrefab, tile_location, Quaternion.identity) as GameObject;
+						created_tile = GameObject.Instantiate (wall, tile_location, Quaternion.identity) as GameObject;
 					}
 				}
 				
@@ -667,7 +673,9 @@ public class Dungeonizer : MonoBehaviour {
 		GameObject end_point;
 		GameObject start_point;
 		if (!makeIt3d) {
-			end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, Dungeon.goalRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
+            exitPrefab = (GameObject)Resources.Load("Wood Box");
+            startPrefab = (GameObject)Resources.Load("Wood Box");
+            end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, Dungeon.goalRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
 			start_point = GameObject.Instantiate (startPrefab, new Vector3 (Dungeon.startRoom.x * tileScaling, Dungeon.startRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
 			
 		} else {
@@ -678,9 +686,20 @@ public class Dungeonizer : MonoBehaviour {
 		
 		end_point.transform.parent = transform;
 		start_point.transform.parent = transform;
-		
-		//Spawn Objects;
-		List<SpawnList> spawnedObjectLocations = new List<SpawnList> ();
+
+        /* //Spawn Objects;
+
+         for (int i = 0; i < es.sheets[0].list.Count; i++)
+         {
+             List<SpawnOption> spawnOptions= new 
+             foreach (var item in es.sheets[0].list)
+             {
+
+             }
+         }*/
+        
+        
+        List<SpawnList> spawnedObjectLocations = new List<SpawnList> ();
 
 		//OTHERS
 		for (int x = 0; x < Dungeon.map_size_x; x++) {
@@ -816,10 +835,14 @@ public class Dungeonizer : MonoBehaviour {
 			}
 		}
 
-
-
+        Entity_Sheet2 es2 = Resources.Load("Dungeon") as Entity_Sheet2;
+        foreach (var item in es2.sheets[0].list)
+        {
+            spawnOptions.Add(item);
+        }
+        
         //OTHERS
-        foreach (SpawnOption objectToSpawn in spawnOptions){
+        foreach (Entity_Sheet2.Param objectToSpawn in spawnOptions){
 			objectCountToSpawn = Random.Range(objectToSpawn.minSpawnCount,objectToSpawn.maxSpawnCount);
 			while (objectCountToSpawn > 0){
                 bool created = false;
@@ -868,9 +891,9 @@ public class Dungeonizer : MonoBehaviour {
 						SpawnList spawnLocation = spawnedObjectLocations[i];
 						GameObject newObject;
                         Quaternion spawnRotation = Quaternion.identity;
-
+                        GameObject enemy = (GameObject)Resources.Load(objectToSpawn.gameObject);
                         if (!makeIt3d){
-                            newObject = GameObject.Instantiate(objectToSpawn.gameObject,new Vector3(spawnLocation.x * tileScaling ,spawnLocation.y * tileScaling,0),spawnRotation) as GameObject;
+                            newObject = GameObject.Instantiate(enemy,new Vector3(spawnLocation.x * tileScaling ,spawnLocation.y * tileScaling,0),spawnRotation) as GameObject;
 						}
 						else {
                             if (spawnLocation.byWall)
@@ -905,7 +928,7 @@ public class Dungeonizer : MonoBehaviour {
                                 }
                             }
 
-                            newObject = GameObject.Instantiate(objectToSpawn.gameObject,new Vector3(spawnLocation.x * tileScaling ,0 + objectToSpawn.heightFix ,spawnLocation.y * tileScaling),spawnRotation) as GameObject;
+                            newObject = GameObject.Instantiate(gameObject,new Vector3(spawnLocation.x * tileScaling ,0 + objectToSpawn.heightFix ,spawnLocation.y * tileScaling),spawnRotation) as GameObject;
 						}
 						
 						newObject.transform.parent = transform;
@@ -928,12 +951,10 @@ public class Dungeonizer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Entity_Sheet1 es = Resources.Load("Dungeon") as Entity_Sheet1;
-        GameObject floor = (GameObject)Resources.Load(es.sheets[0].list[0].floor);
-        GameObject wall = (GameObject)Resources.Load(es.sheets[0].list[0].wall);
+        
         if (generate_on_load){
 			ClearOldDungeon();
-			Generate(floor, wall);
+			Generate();
 
         }
 	}

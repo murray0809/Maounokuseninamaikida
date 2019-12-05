@@ -14,11 +14,8 @@ public class DungeonizerEditor : Editor {
 
 		if(GUILayout.Button("Create Now")) {
             //add everthing the button would do.
-            Entity_Sheet1 es = Resources.Load("Dungeon") as Entity_Sheet1;
-            GameObject floor = (GameObject)Resources.Load(es.sheets[0].list[0].floor);
-            GameObject wall = (GameObject)Resources.Load(es.sheets[0].list[0].wall);
             realscript.ClearOldDungeon(true);
-			realscript.Generate(floor, wall);
+			realscript.Generate();
 			
 		}
 	}

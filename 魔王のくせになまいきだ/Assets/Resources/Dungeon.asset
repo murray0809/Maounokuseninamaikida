@@ -9,13 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d390984958617040a6389874b886ea2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b6977fe76cc979448f47c85bacc6704, type: 3}
   m_Name: Dungeon
   m_EditorClassIdentifier: 
   sheets:
-  - name: Sheet1
+  - name: Dungeons
     list:
-    - floor: floor_tiles
-      wall: wall_stone
-      maximumRoomCount: 10
-      size: 4
+    - minSpawnCount: 2
+      maxSpawnCount: 4
+      spawnByWall: 1
+      spawmInTheMiddle: 1
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Rock - Diamond
+      spawnRoom: 0
+    - minSpawnCount: 2
+      maxSpawnCount: 4
+      spawnByWall: 1
+      spawmInTheMiddle: 1
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Stone Plate
+      spawnRoom: 0
