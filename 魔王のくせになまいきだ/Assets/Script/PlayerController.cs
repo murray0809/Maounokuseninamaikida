@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
     [SerializeField] GameObject attack;
+    [SerializeField] Text m_Text;
 
     Vector3 MOVEX = new Vector3(0.64f, 0, 0); // x軸方向に１マス移動するときの距離
     Vector3 MOVEY = new Vector3(0, 0.64f, 0); // y軸方向に１マス移動するときの距離
@@ -91,16 +93,31 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Item HP")
         {
             Hp++;
+            Debug.Log("HPが1増えた");
+            if (m_Text)   
+            {
+                m_Text.text = "HPが1増えた";  
+            }
         }
 
         if (col.gameObject.tag == "Item ATK")
         {
             Atk++;
+            Debug.Log("ATKが1増えた");
+            if (m_Text)
+            {
+                m_Text.text = "ATKが1増えた";
+            }
         }
 
         if (col.gameObject.tag == "Item DEF")
         {
             Def++;
+            Debug.Log("DEFが1増えた");
+            if (m_Text)
+            {
+                m_Text.text = "DEFが1増えた";
+            }
         }
     }
 }
