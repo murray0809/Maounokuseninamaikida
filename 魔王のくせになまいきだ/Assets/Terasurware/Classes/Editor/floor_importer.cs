@@ -7,10 +7,10 @@ using NPOI.HSSF.UserModel;
 using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 
-public class Dungeon_importer : AssetPostprocessor {
-	private static readonly string filePath = "Assets/Dungeon.xls";
-	private static readonly string exportPath = "Assets/Dungeon.asset";
-	private static readonly string[] sheetNames = { "Dungeons", };
+public class floor_importer : AssetPostprocessor {
+	private static readonly string filePath = "Assets/floor.xls";
+	private static readonly string exportPath = "Assets/floor.asset";
+	private static readonly string[] sheetNames = { "Sheet1", };
 	
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
 	{
@@ -18,9 +18,9 @@ public class Dungeon_importer : AssetPostprocessor {
 			if (!filePath.Equals (asset))
 				continue;
 				
-			Entity_Sheet2 data = (Entity_Sheet2)AssetDatabase.LoadAssetAtPath (exportPath, typeof(Entity_Sheet2));
+			Entity_Sheet1 data = (Entity_Sheet1)AssetDatabase.LoadAssetAtPath (exportPath, typeof(Entity_Sheet1));
 			if (data == null) {
-				data = ScriptableObject.CreateInstance<Entity_Sheet2> ();
+				data = ScriptableObject.CreateInstance<Entity_Sheet1> ();
 				AssetDatabase.CreateAsset ((ScriptableObject)data, exportPath);
 				data.hideFlags = HideFlags.NotEditable;
 			}
@@ -41,23 +41,17 @@ public class Dungeon_importer : AssetPostprocessor {
 						continue;
 					}
 
-					Entity_Sheet2.Sheet s = new Entity_Sheet2.Sheet ();
+					Entity_Sheet1.Sheet s = new Entity_Sheet1.Sheet ();
 					s.name = sheetName;
 				
 					for (int i=1; i<= sheet.LastRowNum; i++) {
 						IRow row = sheet.GetRow (i);
 						ICell cell = null;
 						
-						Entity_Sheet2.Param p = new Entity_Sheet2.Param ();
+						Entity_Sheet1.Param p = new Entity_Sheet1.Param ();
 						
-					cell = row.GetCell(0); p.minSpawnCount = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(1); p.maxSpawnCount = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(2); p.spawnByWall = (cell == null ? false : cell.BooleanCellValue);
-					cell = row.GetCell(3); p.spawmInTheMiddle = (cell == null ? false : cell.BooleanCellValue);
-					cell = row.GetCell(4); p.spawnRotated = (cell == null ? false : cell.BooleanCellValue);
-					cell = row.GetCell(5); p.heightFix = (float)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(6); p.gameObject = (cell == null ? "" : cell.StringCellValue);
-					cell = row.GetCell(7); p.spawnRoom = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(0); p.floor = (cell == null ? "" : cell.StringCellValue);
+					cell = row.GetCell(1); p.wall = (cell == null ? "" : cell.StringCellValue);
 						s.list.Add (p);
 					}
 					data.sheets.Add(s);
