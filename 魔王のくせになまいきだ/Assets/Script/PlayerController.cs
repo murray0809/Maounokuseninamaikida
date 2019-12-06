@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public int Hp = 10; //HP
     [SerializeField] public int Atk = 1; //攻撃力
     [SerializeField] public int Def = 0; //防御力
-    [SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
+    //[SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
-    [SerializeField] GameObject attack;
-    [SerializeField] Text m_Text;
+    [SerializeField] GameObject attack = default;
+    [SerializeField] Text m_Text = default;
 
     Vector3 MOVEX = new Vector3(0.64f, 0, 0); // x軸方向に１マス移動するときの距離
     Vector3 MOVEY = new Vector3(0, 0.64f, 0); // y軸方向に１マス移動するときの距離
