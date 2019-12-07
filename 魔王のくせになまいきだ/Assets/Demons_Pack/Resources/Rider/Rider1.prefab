@@ -89,6 +89,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4213170081228440}
   - component: {fileID: 212687741839524732}
+  - component: {fileID: 487734337584993597}
+  - component: {fileID: 8420719053885928638}
   - component: {fileID: 95811360056112698}
   - component: {fileID: 58883980188760294}
   m_Layer: 0
@@ -166,6 +168,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &487734337584993597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183887021126840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3b11c1cd9327f418ba5d6b84925bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8420719053885928638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183887021126840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba64a4cb865290d47835a0adf2444e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spr: {fileID: 0}
+  anm: {fileID: 0}
+  HitEffect: {fileID: 0}
+  DeathEffect: {fileID: 0}
 --- !u!95 &95811360056112698
 Animator:
   serializedVersion: 3

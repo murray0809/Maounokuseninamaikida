@@ -16,7 +16,6 @@ public class EnemyController : EnemyObject
     [System.NonSerialized] public int Hp = 40; //HP
     [System.NonSerialized] public int Atk = 20; //攻撃力
     [System.NonSerialized] public int Def = 20; //防御力
-    private new readonly object transform;
 
     //ここまでステータス
 
@@ -67,7 +66,7 @@ public class EnemyController : EnemyObject
     protected override void OnCantMove(GameObject hitComponent)
     {
         //衝突判定のあったオブジェクトの関数を取得し、変数を代入可能にする
-        PlayerController Script = hitComponent.Player;
+        PlayerController Script = hitComponent.GetComponent<PlayerController>();
         //ダメージ計算
         int Damage = Atk * Atk / (Atk + Script.Def);
         //オブジェクトのHP変数にダメージを与える
