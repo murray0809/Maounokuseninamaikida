@@ -16,7 +16,6 @@ public class EnemyController : EnemyObject
     [System.NonSerialized] public int Hp = 40; //HP
     [System.NonSerialized] public int Atk = 20; //攻撃力
     [System.NonSerialized] public int Def = 20; //防御力
-    private new readonly object transform;
 
     //ここまでステータス
 
