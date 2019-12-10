@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject attack;
     [SerializeField] Text m_Text;
 
-    Vector3 MOVEX = new Vector3(0.64f, 0, 0); // x軸方向に１マス移動するときの距離
-    Vector3 MOVEY = new Vector3(0, 0.64f, 0); // y軸方向に１マス移動するときの距離
+    Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
+    Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
 
     float step = 2f;     // 移動速度
     Vector3 target;      // 入力受付時、移動後の位置を算出して保存 

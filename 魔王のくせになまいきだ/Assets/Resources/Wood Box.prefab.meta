@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e758b1eb8205aea468ce2a421a17eb4c
+guid: d104b6260c3a00a478c88a30a0d2987e
 labels:
 - 2D
 - Pixelart
@@ -7,9 +7,8 @@ labels:
 - Dungeon
 - Tiles
 - Retro
-timeCreated: 1460628475
-licenseType: Store
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
