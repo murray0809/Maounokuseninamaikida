@@ -554,7 +554,7 @@ public class Dungeonizer : MonoBehaviour {
 	public void Generate()
 	{
 		Dungeon dungeon = new Dungeon ();
-        Entity_Sheet1 es = Resources.Load("floor") as Entity_Sheet1;
+        Entity_Sheet1 es = Resources.Load("Map") as Entity_Sheet1;
         GameObject floor = (GameObject)Resources.Load(es.sheets[0].list[0].floor);
         GameObject wall = (GameObject)Resources.Load(es.sheets[0].list[0].wall);
 
@@ -576,7 +576,7 @@ public class Dungeonizer : MonoBehaviour {
 				GameObject created_tile;
 				Vector3 tile_location;
 				if (!makeIt3d) {
-					tile_location = new Vector3 (x * tileScaling, y * tileScaling, 0);
+					tile_location = new Vector3 (x * tileScaling, y * tileScaling, 2);
 				} else {
 					tile_location = new Vector3 (x * tileScaling, 0, y * tileScaling);
 				}
@@ -943,6 +943,7 @@ public class Dungeonizer : MonoBehaviour {
                     objectCountToSpawn--;
                 }
                 //if cant find anywhere to put, dont put. (prevents endless loops)
+                spawnOptions = new List<Entity_Sheet2.Param>();
             }
 		}
 	}

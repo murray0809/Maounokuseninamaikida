@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc4452fbfb4160345b09e76ef079ddf8, type: 3}
-  m_Name: floor
+  m_Name: Map
   m_EditorClassIdentifier: 
   sheets: []
