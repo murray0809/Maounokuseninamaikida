@@ -674,10 +674,13 @@ public class Dungeonizer : MonoBehaviour {
 		GameObject start_point;
 		if (!makeIt3d) {
             exitPrefab = (GameObject)Resources.Load("Wood Box");
-            startPrefab = (GameObject)Resources.Load("Wood Box");
+            startPrefab = (GameObject)Resources.Load("Player");
             end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, Dungeon.goalRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
 			start_point = GameObject.Instantiate (startPrefab, new Vector3 (Dungeon.startRoom.x * tileScaling, Dungeon.startRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
-			
+            GameObject player = GameObject.Find("Player(Clone)");
+            GameObject camera = GameObject.Find("CM vcam1");
+            Cinemachine.CinemachineVirtualCamera virtualCamera = camera.GetComponent<Cinemachine.CinemachineVirtualCamera>();
+            virtualCamera.m_Follow = player.transform;
 		} else {
 			end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, 0, Dungeon.goalRoom.y * tileScaling), Quaternion.identity) as GameObject;
 			start_point = GameObject.Instantiate (startPrefab, new Vector3 (Dungeon.startRoom.x * tileScaling, 0, Dungeon.startRoom.y * tileScaling), Quaternion.identity) as GameObject;
