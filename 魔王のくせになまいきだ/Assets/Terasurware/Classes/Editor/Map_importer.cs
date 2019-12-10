@@ -7,9 +7,9 @@ using NPOI.HSSF.UserModel;
 using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 
-public class floor_importer : AssetPostprocessor {
-	private static readonly string filePath = "Assets/floor.xls";
-	private static readonly string exportPath = "Assets/floor.asset";
+public class Map_importer : AssetPostprocessor {
+	private static readonly string filePath = "Assets/Map.xls";
+	private static readonly string exportPath = "Assets/Map.asset";
 	private static readonly string[] sheetNames = { "Sheet1", };
 	
 	static void OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
