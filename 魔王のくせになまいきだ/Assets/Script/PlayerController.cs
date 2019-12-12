@@ -13,7 +13,12 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
     [SerializeField] GameObject attack = default;
-    [SerializeField] Text m_Text = default;
+
+    [SerializeField] public Text m_Text1 = default;
+    [SerializeField] public Text m_Text2 = default;
+    [SerializeField] public Text m_Text3 = default;
+
+    [SerializeField] public Text text = default;
 
     Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
@@ -48,6 +53,8 @@ public class PlayerController : MonoBehaviour
         {
             attack.SetActive(false);
         }
+
+
     }
 
     void SetTargetPosition()
@@ -94,9 +101,10 @@ public class PlayerController : MonoBehaviour
         {
             Hp++;
             Debug.Log("HPが1増えた");
-            if (m_Text)   
+            if (m_Text3)
             {
-                m_Text.text = "HPが1増えた";  
+                text.text = "HPが1増えた";
+                LogSet();
             }
         }
 
@@ -104,9 +112,10 @@ public class PlayerController : MonoBehaviour
         {
             Atk++;
             Debug.Log("ATKが1増えた");
-            if (m_Text)
+            if (m_Text3)
             {
-                m_Text.text = "ATKが1増えた";
+                text.text = "ATKが1増えた";
+                LogSet();
             }
         }
 
@@ -114,10 +123,17 @@ public class PlayerController : MonoBehaviour
         {
             Def++;
             Debug.Log("DEFが1増えた");
-            if (m_Text)
+            if (m_Text3)
             {
-                m_Text.text = "DEFが1増えた";
+                text.text = "DEFが1増えた";
+                LogSet();
             }
         }
+    }
+    void LogSet()
+    {
+        m_Text1.text = m_Text2.text;
+        m_Text2.text = m_Text3.text;
+        m_Text3.text = text.text;
     }
 }

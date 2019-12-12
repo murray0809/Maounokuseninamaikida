@@ -2,7 +2,9 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
+
   m_ObjectHideFlags: 8
+
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,8 +14,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4452fbfb4160345b09e76ef079ddf8, type: 3}
   m_Name: Map
   m_EditorClassIdentifier: 
+
   sheets:
   - name: Sheet1
     list:
     - floor: floor_tiles
       wall: wall_stone
+
