@@ -48,7 +48,7 @@ public class Rider_Controller : MonoBehaviour {
         SetZ();
         relativeLife = (float)2 / life;
         anim = GetComponent<Animator>();
-        anim.Play(this.gameObject.name+"Stop", -1, 0f);
+        anim.Play(gameObject.name+"Stop", -1, 0f);
         anim.SetBool("walk", false);
         anim.SetBool("attack", false);
         anim.SetBool("dying", false);
@@ -68,16 +68,11 @@ public class Rider_Controller : MonoBehaviour {
     void GetPath()
     {
         GameObject go = GameObject.Find("Path");
-        foreach (Transform child in go.transform)
-        {
-            path.Add(child);
-        }
-        randomizePath();
     }
     /// <summary>
     /// Create noise into the path
     /// </summary>
-	void randomizePath()
+	void RandomizePath()
     {
         custom = new Vector3[path.Count];
         for (int i = 0; i < path.Count; i++)
@@ -112,19 +107,7 @@ public class Rider_Controller : MonoBehaviour {
             if (target == null)                                                                 //no target and not controled by player then continue the path
             {
                 anim.SetBool("walk", true);
-                Vector2 patchPos = new Vector2(this.transform.position.x, this.transform.position.y);
-                Vector2 patchCustomPos = new Vector2(custom[currentPoint].x, custom[currentPoint].y);
-                needFlip(custom[currentPoint]);
-                transform.position = Vector2.MoveTowards(transform.position, custom[currentPoint], Time.deltaTime * maxspeed / 1.8f);
                 SetZ();
-                if (patchPos == patchCustomPos)
-                {                                                                               //Path Point reached, then go to the next path point
-                    if (currentPoint == path.Count - 1)
-                    {                                                                           //This path point is the last point?
-                        Destroy(this.gameObject);
-                    }
-                    currentPoint++;
-                }
             }
             else                                                                                //golem target and not controled by player
             {

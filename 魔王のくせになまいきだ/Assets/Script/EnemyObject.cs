@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public abstract class EnemyObject : MonoBehaviour
+public class EnemyObject : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
@@ -57,5 +57,5 @@ public abstract class EnemyObject : MonoBehaviour
         }
     }
 
-    protected abstract void OnCantMove(GameObject hitComponent);
+    protected virtual void OnCantMove(GameObject hitComponent) {}
 }
