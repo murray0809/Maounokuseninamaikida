@@ -57,5 +57,5 @@ public class EnemyObject : MonoBehaviour
         }
     }
 
-    protected virtual void OnCantMove(GameObject hitComponent) { }
+    protected virtual void OnCantMove(GameObject hitComponent){}
 }
