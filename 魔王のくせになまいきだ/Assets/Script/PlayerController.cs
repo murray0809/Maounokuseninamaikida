@@ -28,16 +28,25 @@ public class PlayerController : MonoBehaviour
     Vector3 prevPos;     // 何らかの理由で移動できなかった場合、元の位置に戻すため移動前の位置を保存
 
     Animator animator;   // アニメーション
+
+    bool objN = true;
+    bool objS = true;
+    bool objE = true;
+    bool objW = true;
     void Start()
     {
         m_rb2d = GetComponent<Rigidbody2D>();
         target = transform.position;
         animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        Ray();
+
         // ① 移動中かどうかの判定。移動中でなければ入力を受付
         if (transform.position == target)
         {
@@ -62,26 +71,27 @@ public class PlayerController : MonoBehaviour
 
         prevPos = target;
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && objE)
         {
             target = transform.position + MOVEX;
             return;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && objW)
         {
             target = transform.position - MOVEX;
             return;
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && objN)
         {
             target = transform.position + MOVEY;
             return;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) && objS)
         {
             target = transform.position - MOVEY;
             return;
         }
+        return;
     }
 
     // ③ 目的地へ移動する
@@ -135,5 +145,60 @@ public class PlayerController : MonoBehaviour
         m_Text1.text = m_Text2.text;
         m_Text2.text = m_Text3.text;
         m_Text3.text = text.text;
+    }
+
+    void Ray()
+    {
+       
+        int layerMask = LayerMask.GetMask(new string[] { "wall", "Enemy" });
+        Ray2D rayN = new Ray2D(this.transform.position + new Vector3(0, 0.5f,0), transform.up);
+        Ray2D rayS = new Ray2D(this.transform.position + new Vector3(0, -0.5f, 0), transform.up * -1);
+        Ray2D rayE = new Ray2D(this.transform.position + new Vector3(0.5f, 0, 0), transform.right);
+        Ray2D rayW = new Ray2D(this.transform.position + new Vector3(-0.5f, 0, 0), transform.right * -1);
+        RaycastHit2D hitN = Physics2D.Raycast(rayN.origin, rayN.direction, 0.5f, layerMask);
+        RaycastHit2D hitS = Physics2D.Raycast(rayS.origin, rayS.direction, 0.5f, layerMask);
+        RaycastHit2D hitE = Physics2D.Raycast(rayE.origin, rayS.direction, 0.5f, layerMask);
+        RaycastHit2D hitW = Physics2D.Raycast(rayW.origin, rayS.direction, 0.5f, layerMask);
+        Debug.DrawLine(this.transform.position + new Vector3(0, 0.5f, 0), this.transform.position + transform.up);
+        Debug.DrawLine(this.transform.position + new Vector3(0, -0.5f, 0), this.transform.position + transform.up * -1);
+        Debug.DrawLine(this.transform.position + new Vector3(0.5f, 0, 0), this.transform.position + transform.right);
+        Debug.DrawLine(this.transform.position + new Vector3(-0.5f, 0, 0), this.transform.position + transform.right * -1);
+        if (hitN)
+        {
+            Debug.Log(hitN.transform.name);
+            objN = false;
+        }
+        else
+        {
+            objN = true;
+        }
+        if (hitS)
+        {
+            Debug.Log(hitS.transform.name);
+            objS = false;
+        }
+        else
+        {
+            objS = true;
+        }
+        if (hitE)
+        {
+            Debug.Log(hitE.transform.name);
+            objE = false;
+        }
+        else
+        {
+            objE = true;
+        }
+        if (hitW)
+        {
+            Debug.Log(hitW.transform.name);
+            objW = false;
+        }
+        else
+        {
+            objW = true;
+        }
+        
     }
 }
