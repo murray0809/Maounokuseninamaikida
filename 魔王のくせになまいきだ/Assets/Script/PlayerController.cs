@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public Text text = default;
 
+    [SerializeField] Text m_messageText = default;
+
     Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
 
@@ -139,6 +141,15 @@ public class PlayerController : MonoBehaviour
                 LogSet();
             }
         }
+
+        //if (col.gameObject.tag == "Enemy")
+        //{
+        //    Hp--;
+        //    if (Hp == 0)
+        //    {
+        //        GameOver();
+        //    }
+        //}
     }
     void LogSet()
     {
@@ -200,5 +211,15 @@ public class PlayerController : MonoBehaviour
             objW = true;
         }
         
+    }
+    void GameOver()
+    {
+        if (m_messageText)
+
+        {
+
+            m_messageText.text = "Game Over";
+
+        }
     }
 }
