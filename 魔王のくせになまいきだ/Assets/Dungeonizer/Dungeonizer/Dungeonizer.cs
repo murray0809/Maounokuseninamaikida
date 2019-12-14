@@ -576,7 +576,7 @@ public class Dungeonizer : MonoBehaviour {
 				GameObject created_tile;
 				Vector3 tile_location;
 				if (!makeIt3d) {
-					tile_location = new Vector3 (x * tileScaling, y * tileScaling, 4);
+					tile_location = new Vector3 (x * tileScaling, y * tileScaling, 3f);
 				} else {
 					tile_location = new Vector3 (x * tileScaling, 0, y * tileScaling);
 				}

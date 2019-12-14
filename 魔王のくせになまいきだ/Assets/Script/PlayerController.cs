@@ -31,10 +31,10 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;   // アニメーション
 
-    bool objN = true;
-    bool objS = true;
-    bool objE = true;
     bool objW = true;
+    bool objS = true;
+    bool objA = true;
+    bool objD = true;
     void Start()
     {
         m_rb2d = GetComponent<Rigidbody2D>();
@@ -73,17 +73,17 @@ public class PlayerController : MonoBehaviour
 
         prevPos = target;
 
-        if (Input.GetKey(KeyCode.D) && objE)
+        if (Input.GetKey(KeyCode.D) && objD)
         {
             target = transform.position + MOVEX;
             return;
         }
-        if (Input.GetKey(KeyCode.A) && objW)
+        if (Input.GetKey(KeyCode.A) && objA)
         {
             target = transform.position - MOVEX;
             return;
         }
-        if (Input.GetKey(KeyCode.W) && objN)
+        if (Input.GetKey(KeyCode.W) && objW)
         {
             target = transform.position + MOVEY;
             return;
@@ -160,28 +160,28 @@ public class PlayerController : MonoBehaviour
 
     void Ray()
     {
-       
+ 
         int layerMask = LayerMask.GetMask(new string[] { "wall", "Enemy" });
-        Ray2D rayN = new Ray2D(this.transform.position + new Vector3(0, 0.5f,0), transform.up);
+        Ray2D rayW = new Ray2D(this.transform.position + new Vector3(0, 0.5f,0), transform.up);
         Ray2D rayS = new Ray2D(this.transform.position + new Vector3(0, -0.5f, 0), transform.up * -1);
-        Ray2D rayE = new Ray2D(this.transform.position + new Vector3(0.5f, 0, 0), transform.right);
-        Ray2D rayW = new Ray2D(this.transform.position + new Vector3(-0.5f, 0, 0), transform.right * -1);
-        RaycastHit2D hitN = Physics2D.Raycast(rayN.origin, rayN.direction, 0.5f, layerMask);
+        Ray2D rayD = new Ray2D(this.transform.position + new Vector3(0.5f, 0, 0), transform.right);
+        Ray2D rayA = new Ray2D(this.transform.position + new Vector3(-0.5f, 0, 0), transform.right * -1);
+        RaycastHit2D hitW = Physics2D.Raycast(rayW.origin, rayW.direction, 0.5f, layerMask);
         RaycastHit2D hitS = Physics2D.Raycast(rayS.origin, rayS.direction, 0.5f, layerMask);
-        RaycastHit2D hitE = Physics2D.Raycast(rayE.origin, rayS.direction, 0.5f, layerMask);
-        RaycastHit2D hitW = Physics2D.Raycast(rayW.origin, rayS.direction, 0.5f, layerMask);
+        RaycastHit2D hitD = Physics2D.Raycast(rayD.origin, rayD.direction, 0.5f, layerMask);
+        RaycastHit2D hitA = Physics2D.Raycast(rayA.origin, rayA.direction, 0.5f, layerMask);
         Debug.DrawLine(this.transform.position + new Vector3(0, 0.5f, 0), this.transform.position + transform.up);
         Debug.DrawLine(this.transform.position + new Vector3(0, -0.5f, 0), this.transform.position + transform.up * -1);
         Debug.DrawLine(this.transform.position + new Vector3(0.5f, 0, 0), this.transform.position + transform.right);
         Debug.DrawLine(this.transform.position + new Vector3(-0.5f, 0, 0), this.transform.position + transform.right * -1);
-        if (hitN)
+        if (hitW)
         {
-            Debug.Log(hitN.transform.name);
-            objN = false;
+            Debug.Log(hitW.transform.name);
+            objW = false;
         }
         else
         {
-            objN = true;
+            objW = true;
         }
         if (hitS)
         {
@@ -192,23 +192,23 @@ public class PlayerController : MonoBehaviour
         {
             objS = true;
         }
-        if (hitE)
+        if (hitD)
         {
-            Debug.Log(hitE.transform.name);
-            objE = false;
+            Debug.Log(hitD.transform.name);
+            objD = false;
         }
         else
         {
-            objE = true;
+            objD = true;
         }
-        if (hitW)
+        if (hitA)
         {
-            Debug.Log(hitW.transform.name);
-            objW = false;
+            Debug.Log(hitA.transform.name);
+            objA = false;
         }
         else
         {
-            objW = true;
+            objA = true;
         }
         
     }
