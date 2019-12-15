@@ -283,7 +283,6 @@ GameObject:
   - component: {fileID: 756167118476490708}
   - component: {fileID: 114519459149046326}
   - component: {fileID: 50954423544239210}
-  - component: {fileID: 58081346639820764}
   - component: {fileID: 82437421005598388}
   m_Layer: 0
   m_Name: Rider2
@@ -370,7 +369,7 @@ Animator:
   m_GameObject: {fileID: 1599141695295872}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dfe38ab1b200a844a9ae0416cc18d1c5, type: 2}
+  m_Controller: {fileID: 9100000, guid: b0148d6054cee304cb81318d994d750e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -449,22 +448,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58081346639820764
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599141695295872}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.52
 --- !u!82 &82437421005598388
 AudioSource:
   m_ObjectHideFlags: 0
