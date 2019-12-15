@@ -8176,6 +8176,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 108248410908813000, guid: ffdee20a5f0124049997a9b2da404ed7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Text3
+      objectReference: {fileID: 0}
+    - target: {fileID: 108248411394990526, guid: ffdee20a5f0124049997a9b2da404ed7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Text2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108248411888912145, guid: ffdee20a5f0124049997a9b2da404ed7,
+        type: 3}
+      propertyPath: m_TagString
+      value: MessageText
+      objectReference: {fileID: 0}
+    - target: {fileID: 108248411941695985, guid: ffdee20a5f0124049997a9b2da404ed7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415124708701210283, guid: ffdee20a5f0124049997a9b2da404ed7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Text1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffdee20a5f0124049997a9b2da404ed7, type: 3}
 --- !u!1 &264141398
@@ -56093,7 +56118,7 @@ MonoBehaviour:
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
-  text: {fileID: 0}
+  m_Text: {fileID: 0}
   m_messageText: {fileID: 0}
 --- !u!114 &1836969145
 MonoBehaviour:
