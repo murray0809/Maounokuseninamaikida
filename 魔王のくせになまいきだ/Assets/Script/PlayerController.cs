@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Text m_Text2 = default;
     [SerializeField] public Text m_Text3 = default;
 
-    [SerializeField] public Text text = default;
+    [SerializeField] public Text m_Text = default;
 
     [SerializeField] Text m_messageText = default;
 
@@ -40,7 +40,15 @@ public class PlayerController : MonoBehaviour
         m_rb2d = GetComponent<Rigidbody2D>();
         target = transform.position;
         animator = GetComponent<Animator>();
-        
+
+        m_Text1 = GameObject.FindWithTag("Text1").GetComponentInChildren<Text>();
+        m_Text2 = GameObject.FindWithTag("Text2").GetComponentInChildren<Text>();
+        m_Text3 = GameObject.FindWithTag("Text3").GetComponentInChildren<Text>();
+
+        m_Text = GameObject.FindWithTag("Text").GetComponentInChildren<Text>();
+
+        m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
+
     }
 
     // Update is called once per frame
@@ -115,7 +123,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("HPが1増えた");
             if (m_Text3)
             {
-                text.text = "HPが1増えた";
+                m_Text.text = "HPが1増えた";
                 LogSet();
             }
         }
@@ -126,7 +134,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ATKが1増えた");
             if (m_Text3)
             {
-                text.text = "ATKが1増えた";
+                m_Text.text = "ATKが1増えた";
                 LogSet();
             }
         }
@@ -137,7 +145,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("DEFが1増えた");
             if (m_Text3)
             {
-                text.text = "DEFが1増えた";
+                m_Text.text = "DEFが1増えた";
                 LogSet();
             }
         }
@@ -155,7 +163,7 @@ public class PlayerController : MonoBehaviour
     {
         m_Text1.text = m_Text2.text;
         m_Text2.text = m_Text3.text;
-        m_Text3.text = text.text;
+        m_Text3.text = m_Text.text;
     }
 
     void Ray()
