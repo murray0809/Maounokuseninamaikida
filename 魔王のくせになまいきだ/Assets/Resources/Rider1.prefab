@@ -266,6 +266,7 @@ MonoBehaviour:
   Hp: 10
   Atk: 20
   Def: 20
+  Item: {fileID: 6094428611990545948, guid: abef148ad5761044da627dfeb297a08f, type: 3}
   playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
     type: 3}
 --- !u!1 &2322078102996594820
