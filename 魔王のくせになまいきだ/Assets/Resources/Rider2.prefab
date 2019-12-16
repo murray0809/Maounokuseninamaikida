@@ -407,6 +407,9 @@ MonoBehaviour:
   anm: {fileID: 0}
   HitEffect: {fileID: 0}
   DeathEffect: {fileID: 0}
+  Hp: 40
+  Atk: 20
+  Def: 20
 --- !u!114 &2208587964469102907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +451,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!82 &2167429613497370041
 AudioSource:
   m_ObjectHideFlags: 0
@@ -555,7 +558,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
