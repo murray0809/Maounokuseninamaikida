@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     bool objS = true;
     bool objA = true;
     bool objD = true;
+
+    public EnemyController enemyController;
     void Start()
     {
         m_rb2d = GetComponent<Rigidbody2D>();
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
         m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
 
+        Hp = 10;
     }
 
     // Update is called once per frame
@@ -150,14 +153,19 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //if (col.gameObject.tag == "Enemy")
-        //{
-        //    Hp--;
-        //    if (Hp == 0)
-        //    {
-        //        GameOver();
-        //    }
-        //}
+        if (col.gameObject.tag == "Enemy")
+        {
+            int Atk;
+
+            Atk = enemyController.Atk;
+
+            Hp -= Atk;
+            if (Hp <= 0)
+            {
+                Destroy(gameObject);
+                GameOver();
+            }
+        }
     }
     void LogSet()
     {
@@ -226,7 +234,7 @@ public class PlayerController : MonoBehaviour
 
         {
 
-            m_messageText.text = "Game Over";
+            m_messageText.text = "GAME OVER";
 
         }
     }

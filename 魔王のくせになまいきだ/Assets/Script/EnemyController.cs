@@ -19,20 +19,34 @@ public class EnemyController : EnemyObject
 
     [SerializeField] GameObject Item = default;
 
+    [SerializeField] GameObject attack = default;
+
     public PlayerController playerController;
+
+    Animator animator;
     //ここまでステータス
 
     private void Start()
     {
         Hp = 10;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Hp == 0)
+        if (Hp <= 0)
         {
             Destroy(gameObject);
             Instantiate(Item, this.transform.position, Quaternion.identity);
+        }
+
+        if (Input.GetKey(KeyCode.L))
+        {
+            Attack();
+        }
+        else
+        {
+            attack.SetActive(false);
         }
     }
     public void MoveEnemy()
@@ -120,5 +134,8 @@ public class EnemyController : EnemyObject
         }
     }
 
-    
+    void Attack()
+    {
+        attack.SetActive(true);
+    }
 }
