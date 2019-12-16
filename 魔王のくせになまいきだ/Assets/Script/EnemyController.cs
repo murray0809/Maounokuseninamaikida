@@ -18,7 +18,6 @@ public class EnemyController : EnemyObject
     [System.NonSerialized] public int Def = 20; //防御力
 
     //ここまでステータス
-
     public void MoveEnemy()
     {
         // PLAYERタグの付いたオブジェクトを取得する

@@ -576,7 +576,7 @@ public class Dungeonizer : MonoBehaviour {
 				GameObject created_tile;
 				Vector3 tile_location;
 				if (!makeIt3d) {
-					tile_location = new Vector3 (x * tileScaling, y * tileScaling, 3f);
+					tile_location = new Vector3 (x * tileScaling, y * tileScaling, 0);
 				} else {
 					tile_location = new Vector3 (x * tileScaling, 0, y * tileScaling);
 				}
@@ -675,8 +675,8 @@ public class Dungeonizer : MonoBehaviour {
 		if (!makeIt3d) {
             exitPrefab = (GameObject)Resources.Load("Wood Box");
             startPrefab = (GameObject)Resources.Load("Player");
-            end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, Dungeon.goalRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
-			start_point = GameObject.Instantiate (startPrefab, new Vector3 (Dungeon.startRoom.x * tileScaling, Dungeon.startRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
+            end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, Dungeon.goalRoom.y * tileScaling, -0.1f), Quaternion.identity) as GameObject;
+			start_point = GameObject.Instantiate (startPrefab, new Vector3 (Dungeon.startRoom.x * tileScaling, Dungeon.startRoom.y * tileScaling, -0.1f), Quaternion.identity) as GameObject;
             
         } else {
 			end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, 0, Dungeon.goalRoom.y * tileScaling), Quaternion.identity) as GameObject;
@@ -893,7 +893,7 @@ public class Dungeonizer : MonoBehaviour {
                         Quaternion spawnRotation = Quaternion.identity;
                         GameObject enemy = (GameObject)Resources.Load(objectToSpawn.gameObject);
                         if (!makeIt3d){
-                            newObject = GameObject.Instantiate(enemy,new Vector3(spawnLocation.x * tileScaling ,spawnLocation.y * tileScaling,0),spawnRotation) as GameObject;
+                            newObject = GameObject.Instantiate(enemy,new Vector3(spawnLocation.x * tileScaling ,spawnLocation.y * tileScaling, 0),spawnRotation) as GameObject;
 						}
 						else {
                             if (spawnLocation.byWall)

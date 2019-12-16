@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4547088328762956}
   - component: {fileID: 212272688349180202}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LifeBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,8 +92,9 @@ GameObject:
   - component: {fileID: 487734337584993597}
   - component: {fileID: 8420719053885928638}
   - component: {fileID: 95811360056112698}
-  - component: {fileID: 58883980188760294}
-  m_Layer: 0
+  - component: {fileID: -3155934738026387352}
+  - component: {fileID: -1190802415663527234}
+  m_Layer: 9
   m_Name: Rider1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -215,8 +216,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &58883980188760294
-CircleCollider2D:
+--- !u!61 &-3155934738026387352
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -225,12 +226,34 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.52
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &-1190802415663527234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183887021126840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69b9547b1ced184aa853d7949211c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1269139911415036
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4966034335672944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4003234594394124}
   - component: {fileID: 212271790120856712}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4273408606644176}
   - component: {fileID: 212030192524303410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4009995765336034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4722215170051054}
   - component: {fileID: 212918656878059688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4777482003748236}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LifeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
