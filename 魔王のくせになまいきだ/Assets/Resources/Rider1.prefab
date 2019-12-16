@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2320223617687204980}
   - component: {fileID: 2508236627751028976}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6116249623737651398}
   - component: {fileID: 2407539113278526018}
   - component: {fileID: 4421662199603404619}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rider1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2318381191356550664}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2319918242056799144}
   - component: {fileID: 2507493080154093642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2320216839250043802}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2318765748044410774}
   - component: {fileID: 2506639800103142608}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2318745665582477812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LifeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2318518662389891636}
   - component: {fileID: 2508235746663847250}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LifeBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
