@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8739167986604320795}
   m_Layer: 0
   m_Name: attack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,6 @@ MonoBehaviour:
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
   m_Text: {fileID: 0}
-  m_messageText: {fileID: 0}
   playerController: {fileID: 6635311122241629730}
   enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
     type: 3}

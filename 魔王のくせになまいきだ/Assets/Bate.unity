@@ -26927,6 +26927,7 @@ MonoBehaviour:
   Hp: 40
   Atk: 20
   Def: 20
+  playerController: {fileID: 0}
 --- !u!114 &568382653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28249,6 +28250,7 @@ MonoBehaviour:
   Hp: 40
   Atk: 20
   Def: 20
+  playerController: {fileID: 0}
 --- !u!114 &589950635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34114,6 +34116,7 @@ MonoBehaviour:
   Hp: 40
   Atk: 20
   Def: 20
+  playerController: {fileID: 0}
 --- !u!114 &742371017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53079,6 +53082,7 @@ MonoBehaviour:
   Hp: 40
   Atk: 20
   Def: 20
+  playerController: {fileID: 0}
 --- !u!114 &1190785107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85757,6 +85761,7 @@ MonoBehaviour:
   Hp: 40
   Atk: 20
   Def: 20
+  playerController: {fileID: 0}
 --- !u!114 &1912187098
 MonoBehaviour:
   m_ObjectHideFlags: 0

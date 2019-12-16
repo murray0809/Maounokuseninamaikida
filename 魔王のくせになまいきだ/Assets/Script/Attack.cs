@@ -12,8 +12,6 @@ public class Attack : MonoBehaviour
 
     [SerializeField] public Text m_Text = default;
 
-    [SerializeField] Text m_messageText = default;
-
     public PlayerController playerController;
     public EnemyController enemyController;
 
