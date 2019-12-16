@@ -21,7 +21,7 @@ MonoBehaviour:
       spawmInTheMiddle: 0
       spawnRotated: 0
       heightFix: 0
-      gameObject: Rock - Diamond
+      gameObject: Rider1
       spawnRoom: 0
     - minSpawnCount: 2
       maxSpawnCount: 4
@@ -29,5 +29,5 @@ MonoBehaviour:
       spawmInTheMiddle: 0
       spawnRotated: 0
       heightFix: 0
-      gameObject: Stone Plate
+      gameObject: Rider2
       spawnRoom: 0
