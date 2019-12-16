@@ -13,10 +13,11 @@ public class EnemyController : EnemyObject
     public GameObject DeathEffect;
 
     //ここからステータス
-    [SerializeField] public int Hp = 40; //HP
-    [SerializeField] public int Atk = 20; //攻撃力
-    [SerializeField] public int Def = 20; //防御力
+    [SerializeField] public int Hp = 10; //HP
+    [SerializeField] public int Atk = 1; //攻撃力
+    [SerializeField] public int Def = 1; //防御力
 
+    public PlayerController playerController;
     //ここまでステータス
 
     public void MoveEnemy()
@@ -90,5 +91,17 @@ public class EnemyController : EnemyObject
     private void Instantiate(GameObject hitEffect, Vector3 vector3, Quaternion identity)
     {
         throw new NotImplementedException();
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            int Atk;
+
+            Atk = playerController.Atk;
+
+            Hp -= Atk;
+        }
     }
 }
