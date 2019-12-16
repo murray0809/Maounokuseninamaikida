@@ -15,6 +15,7 @@ TagManager:
   - Text3
   - Text
   - MessageText
+  - Attack
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - 
   - wall
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 

@@ -149,15 +149,6 @@ public class PlayerController : MonoBehaviour
                 LogSet();
             }
         }
-
-        //if (col.gameObject.tag == "Enemy")
-        //{
-        //    Hp--;
-        //    if (Hp == 0)
-        //    {
-        //        GameOver();
-        //    }
-        //}
     }
     void LogSet()
     {
