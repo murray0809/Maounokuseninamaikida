@@ -42,7 +42,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Text3: {fileID: 0}
   m_Text: {fileID: 0}
   m_messageText: {fileID: 0}
+  enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
+    type: 3}
 --- !u!61 &5258567752850798790
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -235,7 +237,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
