@@ -13,12 +13,28 @@ public class EnemyController : EnemyObject
     public GameObject DeathEffect;
 
     //ここからステータス
-    [SerializeField] public int Hp = 40; //HP
-    [SerializeField] public int Atk = 20; //攻撃力
-    [SerializeField] public int Def = 20; //防御力
+    [SerializeField] public int Hp = 10; //HP
+    [SerializeField] public int Atk = 1; //攻撃力
+    [SerializeField] public int Def = 1; //防御力
 
+    [SerializeField] GameObject Item = default;
+
+    public PlayerController playerController;
     //ここまでステータス
 
+    private void Start()
+    {
+        Hp = 10;
+    }
+
+    void Update()
+    {
+        if (Hp == 0)
+        {
+            Destroy(gameObject);
+            Instantiate(Item, this.transform.position, Quaternion.identity);
+        }
+    }
     public void MoveEnemy()
     {
         // PLAYERタグの付いたオブジェクトを取得する
@@ -72,23 +88,37 @@ public class EnemyController : EnemyObject
         //オブジェクトのHP変数にダメージを与える
         Script.Hp -= Damage;
         Instantiate(HitEffect, new Vector3(hitComponent.transform.position.x, hitComponent.transform.position.y), Quaternion.identity);
-        //HPが0以下になったら敵をDestroyして死亡エフェクトを出すこと
-        if (Script.Hp <= 0)
-        {
-            Destroy(hitComponent);
-            Instantiate(DeathEffect, new Vector3(hitComponent.transform.position.x, hitComponent.transform.position.y), Quaternion.identity);
-        }
+        ////HPが0以下になったら敵をDestroyして死亡エフェクトを出すこと
+        //if (Script.Hp <= 0)
+        //{
+        //    Destroy(hitComponent);
+        //    Instantiate(DeathEffect, new Vector3(hitComponent.transform.position.x, hitComponent.transform.position.y), Quaternion.identity);
+        //}
         Debug.Log("敵はあなたに" + Damage + "のダメージを与えた");
         Debug.Log("あなたの残りHPは" + Script.Hp);
     }
 
-    private void Destroy(GameObject hitComponent)
+    //private void Destroy(GameObject hitComponent)
+    //{
+    //    throw new NotImplementedException();
+    //}
+
+    //private void Instantiate(GameObject hitEffect, Vector3 vector3, Quaternion identity)
+    //{
+    //    throw new NotImplementedException();
+    //}
+
+    void OnCollisionEnter2D(Collision2D col)
     {
-        throw new NotImplementedException();
+        if (col.gameObject.tag == "Player")
+        {
+            int Atk;
+
+            Atk = playerController.Atk;
+
+            Hp -= Atk;
+        }
     }
 
-    private void Instantiate(GameObject hitEffect, Vector3 vector3, Quaternion identity)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

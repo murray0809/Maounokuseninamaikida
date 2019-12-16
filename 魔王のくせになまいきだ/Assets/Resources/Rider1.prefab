@@ -263,9 +263,13 @@ MonoBehaviour:
   anm: {fileID: 0}
   HitEffect: {fileID: 0}
   DeathEffect: {fileID: 0}
-  Hp: -168
+  
+  Hp: 10
   Atk: 20
   Def: 20
+  Item: {fileID: 6094428611990545948, guid: abef148ad5761044da627dfeb297a08f, type: 3}
+  playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
+    type: 3}
 --- !u!1 &2322078102996594820
 GameObject:
   m_ObjectHideFlags: 0
