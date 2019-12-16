@@ -13,9 +13,9 @@ public class EnemyController : EnemyObject
     public GameObject DeathEffect;
 
     //ここからステータス
-    [System.NonSerialized] public int Hp = 40; //HP
-    [System.NonSerialized] public int Atk = 20; //攻撃力
-    [System.NonSerialized] public int Def = 20; //防御力
+    [SerializeField] public int Hp = 40; //HP
+    [SerializeField] public int Atk = 20; //攻撃力
+    [SerializeField] public int Def = 20; //防御力
 
     //ここまでステータス
 

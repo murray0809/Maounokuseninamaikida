@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3784999833665123289}
   - component: {fileID: 3784999833665123294}
+  - component: {fileID: 8739167986604320795}
   m_Layer: 0
   m_Name: attack
   m_TagString: Untagged
@@ -46,7 +47,27 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
+--- !u!114 &8739167986604320795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784999833665123288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881f8a79b9a64e14dabdb7e04db44a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Text1: {fileID: 0}
+  m_Text2: {fileID: 0}
+  m_Text3: {fileID: 0}
+  m_Text: {fileID: 0}
+  m_messageText: {fileID: 0}
+  playerController: {fileID: 6635311122241629730}
+  enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
+    type: 3}
 --- !u!1 &3784999835473250474
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +221,11 @@ MonoBehaviour:
   Atk: 1
   Def: 0
   attack: {fileID: 3784999833665123288}
+  m_Text1: {fileID: 0}
+  m_Text2: {fileID: 0}
+  m_Text3: {fileID: 0}
   m_Text: {fileID: 0}
+  m_messageText: {fileID: 0}
 --- !u!61 &5258567752850798790
 BoxCollider2D:
   m_ObjectHideFlags: 0
