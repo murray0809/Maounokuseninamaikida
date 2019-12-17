@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Text m_Text = default;
 
     [SerializeField] Text m_messageText = default;
+    [SerializeField] Text m_clearText = default;
+
+    [SerializeField] Button m_restartButton;
 
     Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
         m_Text = GameObject.FindWithTag("Text").GetComponentInChildren<Text>();
 
         m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
+        m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
 
         Hp = 10;
     }
@@ -76,7 +80,11 @@ public class PlayerController : MonoBehaviour
             attack.SetActive(false);
         }
 
-
+        if (Hp <= 0)
+        {
+            Destroy(gameObject);
+            GameOver();
+        }
     }
 
     void SetTargetPosition()
@@ -153,19 +161,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (col.gameObject.tag == "Enemy")
-        {
-            int Atk;
+        //if (col.gameObject.tag == "Enemy")
+        //{
+        //    int Atk;
 
-            Atk = enemyController.Atk;
+        //    Atk = enemyController.Atk;
 
-            Hp -= Atk;
-            if (Hp <= 0)
-            {
-                Destroy(gameObject);
-                GameOver();
-            }
-        }
+        //    Hp -= Atk;
+        //}
     }
     void LogSet()
     {
@@ -231,11 +234,21 @@ public class PlayerController : MonoBehaviour
     void GameOver()
     {
         if (m_messageText)
-
         {
-
             m_messageText.text = "GAME OVER";
+        }
 
+        if (m_restartButton)
+        {
+            m_restartButton.gameObject.SetActive(true);
+        }
+    }
+
+    void GameClear()
+    {
+        if (m_clearText)
+        {
+            m_clearText.text = "GAME CLEAR";
         }
     }
 }
