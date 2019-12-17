@@ -225,6 +225,9 @@ MonoBehaviour:
   m_Text3: {fileID: 0}
   m_Text: {fileID: 0}
   m_messageText: {fileID: 0}
+  m_clearText: {fileID: 0}
+  m_restartButton: {fileID: 0}
+  enemycount: 3
   enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
     type: 3}
 --- !u!61 &5258567752850798790

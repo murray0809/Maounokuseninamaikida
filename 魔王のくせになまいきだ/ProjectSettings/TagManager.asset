@@ -16,6 +16,7 @@ TagManager:
   - Text
   - MessageText
   - Attack
+  - ClearText
   layers:
   - Default
   - TransparentFX
