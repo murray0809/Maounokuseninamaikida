@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Text m_messageText = default;
     [SerializeField] Text m_clearText = default;
 
-    [SerializeField] Button m_restartButton;
+    [SerializeField] Button m_restartButton = default;
 
     Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
