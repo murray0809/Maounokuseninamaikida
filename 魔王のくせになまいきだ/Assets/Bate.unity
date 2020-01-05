@@ -85095,6 +85095,7 @@ MonoBehaviour:
   m_messageText: {fileID: 0}
   m_clearText: {fileID: 0}
   m_restartButton: {fileID: 0}
+  m_attack: {fileID: 0}
   enemyController: {fileID: 0}
 --- !u!114 &1882646748
 MonoBehaviour:
