@@ -61,7 +61,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         Ray();
 
         // ① 移動中かどうかの判定。移動中でなければ入力を受付
@@ -85,6 +89,7 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             GameOver();
         }
+
     }
 
     void SetTargetPosition()

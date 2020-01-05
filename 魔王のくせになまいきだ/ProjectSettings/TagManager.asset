@@ -17,6 +17,7 @@ TagManager:
   - MessageText
   - Attack
   - ClearText
+  - Menu_HP
   layers:
   - Default
   - TransparentFX
