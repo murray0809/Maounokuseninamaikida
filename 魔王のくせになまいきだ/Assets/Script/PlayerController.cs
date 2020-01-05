@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Button m_restartButton = default;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip m_attack;
+
     Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
 
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
         m_rb2d = GetComponent<Rigidbody2D>();
         target = transform.position;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         m_Text1 = GameObject.FindWithTag("Text1").GetComponentInChildren<Text>();
         m_Text2 = GameObject.FindWithTag("Text2").GetComponentInChildren<Text>();
@@ -78,6 +82,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
         {
             Attack();
+            audioSource.PlayOneShot(m_attack);
         }
         else
         {
