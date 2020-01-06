@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] public int Hp = 10; //HP
-    [SerializeField] public int Atk = 1; //攻撃力
-    [SerializeField] public int Def = 0; //防御力
+    [SerializeField] public static int Hp = 10; //HP
+    [SerializeField] public static int Atk = 1; //攻撃力
+    [SerializeField] public static int Def = 0; //防御力
     //[SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
     [SerializeField] GameObject attack = default;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Button m_restartButton = default;
 
     AudioSource audioSource;
-    [SerializeField] AudioClip m_attack;
+    [SerializeField] AudioClip m_attack = default;
 
     Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     bool objD = true;
 
     public EnemyController enemyController;
+    
     void Start()
     {
         m_rb2d = GetComponent<Rigidbody2D>();
@@ -140,13 +141,13 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "Item HP")
         {
-            Hp++;
             Debug.Log("HPが1増えた");
             if (m_Text3)
             {
                 m_Text.text = "HPが1増えた";
                 LogSet();
             }
+            Hp++;
         }
 
         if (col.gameObject.tag == "Item ATK")

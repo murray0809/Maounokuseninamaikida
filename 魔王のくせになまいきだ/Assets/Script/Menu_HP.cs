@@ -18,9 +18,7 @@ public class Menu_HP : MonoBehaviour
     {
         if (m_Menu_HP)
         {
-            int HP = playerController.Hp;
-            string Hp = HP.ToString();
-            m_Menu_HP.text = "HP:" + Hp;
+            m_Menu_HP.text = "HP:" + PlayerController.Hp;
         }
     }
 }

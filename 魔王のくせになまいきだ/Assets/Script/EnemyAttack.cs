@@ -41,11 +41,11 @@ public class EnemyAttack : MonoBehaviour
 
             int Hp;
 
-            Hp = playerController.Hp;
+            Hp = PlayerController.Hp;
 
             Hp -= Atk;
 
-            playerController.Hp = Hp;
+            PlayerController.Hp = Hp;
 
             if (m_Text3)
             {

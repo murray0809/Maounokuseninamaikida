@@ -17,9 +17,7 @@ public class Menu_ATK : MonoBehaviour
     {
         if (m_Menu_ATK)
         {
-            int ATK = playerController.Atk;
-            string Atk = ATK.ToString();
-            m_Menu_ATK.text = "ATK:" + Atk;
+            m_Menu_ATK.text = "ATK:" + PlayerController.Atk;
         }
     }
 }
