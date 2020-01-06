@@ -17,9 +17,7 @@ public class Menu_DEF : MonoBehaviour
     {
         if (m_Menu_DEF)
         {
-            int DEF = playerController.Def;
-            string Def = DEF.ToString();
-            m_Menu_DEF.text = "DEF:" + Def;
+            m_Menu_DEF.text = "DEF:" + PlayerController.Def;
         }
     }
 }

@@ -37,7 +37,7 @@ public class Attack : MonoBehaviour
         {
             int Atk;
 
-            Atk = playerController.Atk;
+            Atk = PlayerController.Atk;
 
             int Hp;
 

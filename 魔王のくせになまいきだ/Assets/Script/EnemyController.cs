@@ -98,9 +98,9 @@ public class EnemyController : EnemyObject
         //衝突判定のあったオブジェクトの関数を取得し、変数を代入可能にする
         PlayerController Script = hitComponent.GetComponent<PlayerController>();
         //ダメージ計算
-        int Damage = Atk * Atk / (Atk + Script.Def);
+        int Damage = Atk * Atk / (Atk + PlayerController.Def);
         //オブジェクトのHP変数にダメージを与える
-        Script.Hp -= Damage;
+        PlayerController.Hp -= Damage;
         Instantiate(HitEffect, new Vector3(hitComponent.transform.position.x, hitComponent.transform.position.y), Quaternion.identity);
         ////HPが0以下になったら敵をDestroyして死亡エフェクトを出すこと
         //if (Script.Hp <= 0)
@@ -109,7 +109,7 @@ public class EnemyController : EnemyObject
         //    Instantiate(DeathEffect, new Vector3(hitComponent.transform.position.x, hitComponent.transform.position.y), Quaternion.identity);
         //}
         Debug.Log("敵はあなたに" + Damage + "のダメージを与えた");
-        Debug.Log("あなたの残りHPは" + Script.Hp);
+        Debug.Log("あなたの残りHPは" + PlayerController.Hp);
     }
 
     //private void Destroy(GameObject hitComponent)
@@ -128,7 +128,7 @@ public class EnemyController : EnemyObject
         {
             int Atk;
 
-            Atk = playerController.Atk;
+            Atk = PlayerController.Atk;
 
             Hp -= Atk;
         }
