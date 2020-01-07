@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public static int Def = 0; //防御力
     //[SerializeField] float m_moveSpeed = 5f;  //プレイヤーの移動速度
     Rigidbody2D m_rb2d;
-    [SerializeField] GameObject attack = default;
+    [SerializeField] GameObject attack_left = default;
+    [SerializeField] GameObject attack_up = default;
+    [SerializeField] GameObject attack_down = default;
 
     [SerializeField] public Text m_Text1 = default;
     [SerializeField] public Text m_Text2 = default;
@@ -80,15 +82,63 @@ public class PlayerController : MonoBehaviour
         }
         Move();
 
-        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.LeftArrow))
         {
-            Attack();
+            Attack_Left();
+            audioSource.PlayOneShot(m_attack);
+        }
+        else if (Input.GetKey(KeyCode.LeftControl)&& Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.RightArrow))
+        {
+            Attack_Left();
+            audioSource.PlayOneShot(m_attack);
+        }
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.UpArrow))
+        {
+            Attack_Up();
+            audioSource.PlayOneShot(m_attack);
+        }
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.DownArrow))
+        {
+            Attack_Down();
             audioSource.PlayOneShot(m_attack);
         }
         else
         {
-            attack.SetActive(false);
+            attack_left.SetActive(false);
+            attack_up.SetActive(false);
+            attack_down.SetActive(false);
         }
+
+
+        //if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    attack_left.SetActive(true);
+        //    audioSource.PlayOneShot(m_attack);
+        //}
+        //else
+        //{
+        //    attack_left.SetActive(false);
+        //}
+
+        //if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    attack_up.SetActive(true);
+        //    audioSource.PlayOneShot(m_attack);
+        //}
+        //else
+        //{
+        //    attack_up.SetActive(false);
+        //}
+
+        //if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    attack_down.SetActive(true);
+        //    audioSource.PlayOneShot(m_attack);
+        //}
+        //else
+        //{
+        //    attack_down.SetActive(false);
+        //}
 
         if (Hp <= 0)
         {
@@ -132,9 +182,21 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target, step * Time.deltaTime);
     }
 
-    void Attack()
+    void Attack_Left()
     {
-        attack.SetActive(true);
+        attack_left.SetActive(true);
+        Debug.Log("攻撃した");
+    }
+
+    void Attack_Up()
+    {
+        attack_up.SetActive(true);
+        Debug.Log("攻撃した");
+    }
+
+    void Attack_Down()
+    {
+        attack_down.SetActive(true);
         Debug.Log("攻撃した");
     }
     void OnCollisionEnter2D(Collision2D col)
