@@ -85084,7 +85084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52d62733a6e2f644960cac3410ca77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 1836568461}
+  attack_left: {fileID: 0}
+  attack_up: {fileID: 0}
+  attack_down: {fileID: 0}
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
