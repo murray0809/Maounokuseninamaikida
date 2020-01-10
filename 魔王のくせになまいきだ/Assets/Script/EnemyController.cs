@@ -37,7 +37,7 @@ public class EnemyController : EnemyObject
         if (Hp <= 0)
         {
             Destroy(gameObject);
-            Instantiate(Item, this.transform.position, Quaternion.identity);
+            Instantiate(Item, this.transform.position + new Vector3(0,-0.3f,0), Quaternion.identity);
         }
 
         if (Input.GetKey(KeyCode.L))

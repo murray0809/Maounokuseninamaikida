@@ -64,6 +64,13 @@ MonoBehaviour:
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
+  m_Text4: {fileID: 0}
+  m_Text5: {fileID: 0}
+  m_Text6: {fileID: 0}
+  m_Text7: {fileID: 0}
+  m_Text8: {fileID: 0}
+  m_Text9: {fileID: 0}
+  m_Text10: {fileID: 0}
   m_Text: {fileID: 0}
   playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
     type: 3}
@@ -83,6 +90,13 @@ MonoBehaviour:
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
+  m_Text4: {fileID: 0}
+  m_Text5: {fileID: 0}
+  m_Text6: {fileID: 0}
+  m_Text7: {fileID: 0}
+  m_Text8: {fileID: 0}
+  m_Text9: {fileID: 0}
+  m_Text10: {fileID: 0}
   m_Text: {fileID: 0}
   playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
     type: 3}
@@ -182,6 +196,7 @@ GameObject:
   - component: {fileID: 5472059698032548128}
   - component: {fileID: 6958706868946117337}
   - component: {fileID: 5791663061329279190}
+  - component: {fileID: -7701594727443661271}
   m_Layer: 9
   m_Name: Rider1
   m_TagString: Enemy
@@ -352,7 +367,7 @@ MonoBehaviour:
   anm: {fileID: 0}
   HitEffect: {fileID: 0}
   DeathEffect: {fileID: 0}
-  Hp: 10
+  Hp: -95
   Atk: 20
   Def: 20
   Item: {fileID: 6094428611990545948, guid: abef148ad5761044da627dfeb297a08f, type: 3}
@@ -369,6 +384,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1dd871bc56a1fc44923e18f5cf25419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7701594727443661271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321917048086401216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69b9547b1ced184aa853d7949211c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2322078102996594820

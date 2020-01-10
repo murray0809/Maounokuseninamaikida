@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     AudioSource audioSource;
     [SerializeField] AudioClip m_attack = default;
+    [SerializeField] AudioClip m_item = default;
 
     public Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     public Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
@@ -46,10 +47,10 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;   // アニメーション
 
-    public bool objW = true;
-    public bool objS = true;
-    public bool objA = true;
-    public bool objD = true;
+    bool objW = true;
+    bool objS = true;
+    bool objA = true;
+    bool objD = true;
 
     public EnemyController enemyController;
 
@@ -187,6 +188,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Item HP")
         {
             Debug.Log("HPが1増えた");
+            audioSource.PlayOneShot(m_item);
             if (m_Text3)
             {
                 m_Text.text = " " + "HPが1増えた";
@@ -199,17 +201,20 @@ public class PlayerController : MonoBehaviour
         {
             Atk++;
             Debug.Log("ATKが1増えた");
+            audioSource.PlayOneShot(m_item);
             if (m_Text3)
             {
                 m_Text.text = " " + "ATKが1増えた";
                 LogSet();
             }
+            audioSource.PlayOneShot(m_item);
         }
 
         if (col.gameObject.tag == "Item DEF")
         {
             Def++;
             Debug.Log("DEFが1増えた");
+            audioSource.PlayOneShot(m_item);
             if (m_Text3)
             {
                 m_Text.text = " " + "DEFが1増えた";
