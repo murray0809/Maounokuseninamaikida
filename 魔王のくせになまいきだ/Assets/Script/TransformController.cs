@@ -7,6 +7,9 @@ public class TransformController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -0.1f);
+        int x = (int)transform.position.x;
+        int y = (int)transform.position.y;
+
+        this.transform.position = new Vector3((float)x, (float)y, -0.1f);
     }
 }

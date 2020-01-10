@@ -47,6 +47,13 @@ MonoBehaviour:
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
+  m_Text4: {fileID: 0}
+  m_Text5: {fileID: 0}
+  m_Text6: {fileID: 0}
+  m_Text7: {fileID: 0}
+  m_Text8: {fileID: 0}
+  m_Text9: {fileID: 0}
+  m_Text10: {fileID: 0}
   m_Text: {fileID: 0}
   playerController: {fileID: 6635311122241629730}
   enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
@@ -235,11 +242,23 @@ MonoBehaviour:
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
+  m_Text4: {fileID: 0}
+  m_Text5: {fileID: 0}
+  m_Text6: {fileID: 0}
+  m_Text7: {fileID: 0}
+  m_Text8: {fileID: 0}
+  m_Text9: {fileID: 0}
+  m_Text10: {fileID: 0}
   m_Text: {fileID: 0}
   m_messageText: {fileID: 0}
   m_clearText: {fileID: 0}
   m_restartButton: {fileID: 0}
   m_attack: {fileID: 8300000, guid: 4980356fdb8cfc9428facd7827d54e22, type: 3}
+  m_item: {fileID: 8300000, guid: 999136ccebad732468af7db0cc313129, type: 3}
+  MOVEX: {x: 1, y: 0, z: 0}
+  MOVEY: {x: 0, y: 1, z: 0}
+  target: {x: 0, y: 0, z: 0}
+  prevPos: {x: 0, y: 0, z: 0}
   enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
     type: 3}
 --- !u!61 &5258567752850798790
@@ -411,6 +430,13 @@ MonoBehaviour:
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
+  m_Text4: {fileID: 0}
+  m_Text5: {fileID: 0}
+  m_Text6: {fileID: 0}
+  m_Text7: {fileID: 0}
+  m_Text8: {fileID: 0}
+  m_Text9: {fileID: 0}
+  m_Text10: {fileID: 0}
   m_Text: {fileID: 0}
   playerController: {fileID: 6635311122241629730}
   enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
@@ -488,6 +514,13 @@ MonoBehaviour:
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
+  m_Text4: {fileID: 0}
+  m_Text5: {fileID: 0}
+  m_Text6: {fileID: 0}
+  m_Text7: {fileID: 0}
+  m_Text8: {fileID: 0}
+  m_Text9: {fileID: 0}
+  m_Text10: {fileID: 0}
   m_Text: {fileID: 0}
   playerController: {fileID: 6635311122241629730}
   enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,

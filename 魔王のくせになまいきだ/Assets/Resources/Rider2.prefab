@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 2167429613497370041}
   - component: {fileID: 9018955333032135761}
   - component: {fileID: 270112014312318617}
+  - component: {fileID: 1569248894938115537}
   m_Layer: 9
   m_Name: Rider2
   m_TagString: Enemy
@@ -592,6 +593,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1dd871bc56a1fc44923e18f5cf25419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1569248894938115537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248720850543000205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69b9547b1ced184aa853d7949211c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2249136406564982591
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +807,13 @@ MonoBehaviour:
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
+  m_Text4: {fileID: 0}
+  m_Text5: {fileID: 0}
+  m_Text6: {fileID: 0}
+  m_Text7: {fileID: 0}
+  m_Text8: {fileID: 0}
+  m_Text9: {fileID: 0}
+  m_Text10: {fileID: 0}
   m_Text: {fileID: 0}
   playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
     type: 3}
