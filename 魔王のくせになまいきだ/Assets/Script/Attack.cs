@@ -63,7 +63,7 @@ public class Attack : MonoBehaviour
 
             if (m_Text3)
             {
-                m_Text.text = Atk + "ダメージを与えた";
+                m_Text.text =" " + Atk + "ダメージを与えた";
                 LogSet();
             }
         }
