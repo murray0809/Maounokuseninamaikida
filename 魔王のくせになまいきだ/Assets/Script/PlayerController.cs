@@ -19,6 +19,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Text m_Text1 = default;
     [SerializeField] public Text m_Text2 = default;
     [SerializeField] public Text m_Text3 = default;
+    [SerializeField] public Text m_Text4 = default;
+    [SerializeField] public Text m_Text5 = default;
+    [SerializeField] public Text m_Text6 = default;
+    [SerializeField] public Text m_Text7 = default;
+    [SerializeField] public Text m_Text8 = default;
+    [SerializeField] public Text m_Text9 = default;
+    [SerializeField] public Text m_Text10 = default;
 
     [SerializeField] public Text m_Text = default;
 
@@ -30,22 +37,22 @@ public class PlayerController : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] AudioClip m_attack = default;
 
-    Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
-    Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
+    public Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
+    public Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
 
     float step = 2f;     // 移動速度
-    Vector3 target;      // 入力受付時、移動後の位置を算出して保存 
-    Vector3 prevPos;     // 何らかの理由で移動できなかった場合、元の位置に戻すため移動前の位置を保存
+    public Vector3 target;      // 入力受付時、移動後の位置を算出して保存 
+    public Vector3 prevPos;     // 何らかの理由で移動できなかった場合、元の位置に戻すため移動前の位置を保存
 
     Animator animator;   // アニメーション
 
-    bool objW = true;
-    bool objS = true;
-    bool objA = true;
-    bool objD = true;
+    public bool objW = true;
+    public bool objS = true;
+    public bool objA = true;
+    public bool objD = true;
 
     public EnemyController enemyController;
-    
+
     void Start()
     {
         m_rb2d = GetComponent<Rigidbody2D>();
@@ -56,6 +63,13 @@ public class PlayerController : MonoBehaviour
         m_Text1 = GameObject.FindWithTag("Text1").GetComponentInChildren<Text>();
         m_Text2 = GameObject.FindWithTag("Text2").GetComponentInChildren<Text>();
         m_Text3 = GameObject.FindWithTag("Text3").GetComponentInChildren<Text>();
+        m_Text4 = GameObject.FindWithTag("Text4").GetComponentInChildren<Text>();
+        m_Text5 = GameObject.FindWithTag("Text5").GetComponentInChildren<Text>();
+        m_Text6 = GameObject.FindWithTag("Text6").GetComponentInChildren<Text>();
+        m_Text7 = GameObject.FindWithTag("Text7").GetComponentInChildren<Text>();
+        m_Text8 = GameObject.FindWithTag("Text8").GetComponentInChildren<Text>();
+        m_Text9 = GameObject.FindWithTag("Text9").GetComponentInChildren<Text>();
+        m_Text10 = GameObject.FindWithTag("Text10").GetComponentInChildren<Text>();
 
         m_Text = GameObject.FindWithTag("Text").GetComponentInChildren<Text>();
 
@@ -109,43 +123,11 @@ public class PlayerController : MonoBehaviour
             attack_down.SetActive(false);
         }
 
-
-        //if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.RightArrow))
-        //{
-        //    attack_left.SetActive(true);
-        //    audioSource.PlayOneShot(m_attack);
-        //}
-        //else
-        //{
-        //    attack_left.SetActive(false);
-        //}
-
-        //if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.UpArrow))
-        //{
-        //    attack_up.SetActive(true);
-        //    audioSource.PlayOneShot(m_attack);
-        //}
-        //else
-        //{
-        //    attack_up.SetActive(false);
-        //}
-
-        //if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.DownArrow))
-        //{
-        //    attack_down.SetActive(true);
-        //    audioSource.PlayOneShot(m_attack);
-        //}
-        //else
-        //{
-        //    attack_down.SetActive(false);
-        //}
-
         if (Hp <= 0)
         {
             Destroy(gameObject);
             GameOver();
         }
-
     }
 
     void SetTargetPosition()
@@ -180,6 +162,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, step * Time.deltaTime);
+        
     }
 
     void Attack_Left()
@@ -247,7 +230,14 @@ public class PlayerController : MonoBehaviour
     {
         m_Text1.text = m_Text2.text;
         m_Text2.text = m_Text3.text;
-        m_Text3.text = m_Text.text;
+        m_Text3.text = m_Text4.text;
+        m_Text4.text = m_Text5.text;
+        m_Text5.text = m_Text6.text;
+        m_Text6.text = m_Text7.text;
+        m_Text7.text = m_Text8.text;
+        m_Text8.text = m_Text9.text;
+        m_Text9.text = m_Text10.text;
+        m_Text10.text = m_Text.text;
     }
 
     void Ray()
