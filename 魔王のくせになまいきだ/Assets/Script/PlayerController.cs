@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("HPが1増えた");
             if (m_Text3)
             {
-                m_Text.text = "HPが1増えた";
+                m_Text.text = " " + "HPが1増えた";
                 LogSet();
             }
             Hp++;
@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ATKが1増えた");
             if (m_Text3)
             {
-                m_Text.text = "ATKが1増えた";
+                m_Text.text = " " + "ATKが1増えた";
                 LogSet();
             }
         }
@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("DEFが1増えた");
             if (m_Text3)
             {
-                m_Text.text = "DEFが1増えた";
+                m_Text.text = " " + "DEFが1増えた";
                 LogSet();
             }
         }
