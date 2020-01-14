@@ -673,7 +673,7 @@ public class Dungeonizer : MonoBehaviour {
 		GameObject end_point;
 		GameObject start_point;
 		if (!makeIt3d) {
-            exitPrefab = (GameObject)Resources.Load("Wood Box");
+            exitPrefab = (GameObject)Resources.Load("stairs_stone_up");
             startPrefab = (GameObject)Resources.Load("Player");
             end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, Dungeon.goalRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
 			start_point = GameObject.Instantiate (startPrefab, new Vector3 (Dungeon.startRoom.x * tileScaling, Dungeon.startRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
