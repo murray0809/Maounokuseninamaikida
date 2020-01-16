@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6680913639325374921}
   - component: {fileID: 6680913639325374934}
   m_Layer: 0
-  m_Name: Item DEF
-  m_TagString: Item DEF
+  m_Name: Item SPEED
+  m_TagString: Item SPEED
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
