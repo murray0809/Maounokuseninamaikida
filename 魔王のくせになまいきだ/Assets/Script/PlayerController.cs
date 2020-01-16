@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     public Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
 
-    float step = 2f;     // 移動速度
+    [SerializeField] public float step = 1f;     // 移動速度
     public Vector3 target;      // 入力受付時、移動後の位置を算出して保存 
     public Vector3 prevPos;     // 何らかの理由で移動できなかった場合、元の位置に戻すため移動前の位置を保存
 
@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
         m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
 
         Hp = 10;
+        step = 1f;
     }
 
     // Update is called once per frame
@@ -97,22 +98,22 @@ public class PlayerController : MonoBehaviour
         }
         Move();
 
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.LeftArrow))
         {
             Attack_Left();
             audioSource.PlayOneShot(m_attack);
         }
-        else if (Input.GetKey(KeyCode.LeftControl)&& Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftControl)&& Input.GetKey(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.RightArrow))
         {
             Attack_Left();
             audioSource.PlayOneShot(m_attack);
         }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.UpArrow))
         {
             Attack_Up();
             audioSource.PlayOneShot(m_attack);
         }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.DownArrow))
         {
             Attack_Down();
             audioSource.PlayOneShot(m_attack);
@@ -210,26 +211,17 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(m_item);
         }
 
-        if (col.gameObject.tag == "Item DEF")
+        if (col.gameObject.tag == "Item SPEED")
         {
-            Def++;
-            Debug.Log("DEFが1増えた");
+            step = step + (float)0.5;
+            Debug.Log("SPEEDが0.5増えた");
             audioSource.PlayOneShot(m_item);
             if (m_Text3)
             {
-                m_Text.text = " " + "DEFが1増えた";
+                m_Text.text = " " + "SPEEDが0.5増えた";
                 LogSet();
             }
         }
-
-        //if (col.gameObject.tag == "Enemy")
-        //{
-        //    int Atk;
-
-        //    Atk = enemyController.Atk;
-
-        //    Hp -= Atk;
-        //}
     }
     void LogSet()
     {

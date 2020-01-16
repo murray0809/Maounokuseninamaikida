@@ -25,6 +25,7 @@ TagManager:
   - Text8
   - Text9
   - Text10
+  - Item SPEED
   layers:
   - Default
   - TransparentFX
