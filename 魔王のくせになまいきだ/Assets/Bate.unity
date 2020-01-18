@@ -3417,7 +3417,7 @@ MonoBehaviour:
   cornerPrefab: {fileID: 0}
   cornerRotation: 0
   maximumRoomCount: 10
-  roomMargin: 3
+  roomMargin: 5
   generate_on_load: 1
   minRoomSize: 5
   maxRoomSize: 10
