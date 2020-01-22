@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 MOVEX = new Vector3(1f, 0, 0); // x軸方向に１マス移動するときの距離
     public Vector3 MOVEY = new Vector3(0, 1f, 0); // y軸方向に１マス移動するときの距離
 
-    [SerializeField] public float step = 1f;     // 移動速度
+    [SerializeField] public float step = 2f;     // 移動速度
     public Vector3 target;      // 入力受付時、移動後の位置を算出して保存 
     public Vector3 prevPos;     // 何らかの理由で移動できなかった場合、元の位置に戻すため移動前の位置を保存
 
@@ -186,31 +186,6 @@ public class PlayerController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Item HP")
-        {
-            Debug.Log("HPが1増えた");
-            audioSource.PlayOneShot(m_item);
-            if (m_Text3)
-            {
-                m_Text.text = " " + "HPが1増えた";
-                LogSet();
-            }
-            Hp++;
-        }
-
-        if (col.gameObject.tag == "Item ATK")
-        {
-            Atk++;
-            Debug.Log("ATKが1増えた");
-            audioSource.PlayOneShot(m_item);
-            if (m_Text3)
-            {
-                m_Text.text = " " + "ATKが1増えた";
-                LogSet();
-            }
-            audioSource.PlayOneShot(m_item);
-        }
-
         if (col.gameObject.tag == "Item SPEED")
         {
             step = step + (float)0.5;
@@ -301,14 +276,6 @@ public class PlayerController : MonoBehaviour
         if (m_restartButton)
         {
             m_restartButton.gameObject.SetActive(true);
-        }
-    }
-
-    void GameClear()
-    {
-        if (m_clearText)
-        {
-            m_clearText.text = "GAME CLEAR";
         }
     }
 }
