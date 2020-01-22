@@ -47,26 +47,7 @@ public class Attack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Enemy")
-        {
-            int Atk;
-
-            Atk = PlayerController.Atk;
-
-            int Hp;
-
-            Hp = enemyController.Hp;
-
-            Hp -= Atk;
-
-            enemyController.Hp = Hp;
-
-            if (m_Text3)
-            {
-                m_Text.text =" " + Atk + "ダメージを与えた";
-                LogSet();
-            }
-        }
+        
     }
 
     void LogSet()
