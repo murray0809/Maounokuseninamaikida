@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7716534799002430439}
   - component: {fileID: 7247404004489230440}
-  - component: {fileID: 7227364156923402615}
   - component: {fileID: 6579348767116112179}
   m_Layer: 0
   m_Name: Attack
@@ -49,32 +48,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &7227364156923402615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418831036109338453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881f8a79b9a64e14dabdb7e04db44a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Text1: {fileID: 0}
-  m_Text2: {fileID: 0}
-  m_Text3: {fileID: 0}
-  m_Text4: {fileID: 0}
-  m_Text5: {fileID: 0}
-  m_Text6: {fileID: 0}
-  m_Text7: {fileID: 0}
-  m_Text8: {fileID: 0}
-  m_Text9: {fileID: 0}
-  m_Text10: {fileID: 0}
-  m_Text: {fileID: 0}
-  playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
-    type: 3}
-  enemyController: {fileID: 6958706868946117337}
 --- !u!114 &6579348767116112179
 MonoBehaviour:
   m_ObjectHideFlags: 0

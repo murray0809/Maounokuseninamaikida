@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject attack_left = default;
     [SerializeField] GameObject attack_up = default;
     [SerializeField] GameObject attack_down = default;
+    [SerializeField] GameObject attack_right = default;
 
     [SerializeField] public Text m_Text1 = default;
     [SerializeField] public Text m_Text2 = default;
@@ -77,8 +78,10 @@ public class PlayerController : MonoBehaviour
         m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
         m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
 
+        attack_left = GameObject.FindWithTag("attack_left");
+
         Hp = 10;
-        step = 1f;
+        step = 2f;
     }
 
     // Update is called once per frame
@@ -105,7 +108,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftControl)&& Input.GetKey(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.RightArrow))
         {
-            Attack_Left();
+            Attack_Right();
             audioSource.PlayOneShot(m_attack);
         }
         else if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.UpArrow))
@@ -123,6 +126,7 @@ public class PlayerController : MonoBehaviour
             attack_left.SetActive(false);
             attack_up.SetActive(false);
             attack_down.SetActive(false);
+            attack_right.SetActive(false);
         }
 
         if (Hp <= 0)
@@ -182,6 +186,12 @@ public class PlayerController : MonoBehaviour
     void Attack_Down()
     {
         attack_down.SetActive(true);
+        Debug.Log("攻撃した");
+    }
+
+    void Attack_Right()
+    {
+        attack_right.SetActive(true);
         Debug.Log("攻撃した");
     }
     void OnCollisionEnter2D(Collision2D col)
