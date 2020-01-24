@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 21249568}
   - component: {fileID: 6194532}
   - component: {fileID: 11460078}
+  - component: {fileID: -2030168868449478383}
   m_Layer: 0
   m_Name: Wood Box
   m_TagString: Untagged
@@ -47,7 +48,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -59,7 +59,6 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -122,3 +121,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sortOrderOffset: 0
+--- !u!114 &-2030168868449478383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076d4802502ed944fa0a20e431e1d737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_item1: {fileID: 0}
+  m_item2: {fileID: 0}
+  m_item3: {fileID: 0}
+  m_item4: {fileID: 0}
+  m_item5: {fileID: 0}

@@ -9,11 +9,14 @@ public class GameClear : MonoBehaviour
 
     [SerializeField] Text m_clearText = default;
 
+    SceneLoader SceneLoader;
+
     GameObject[] enemyObjects;
 
     void Start()
     {
         m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
+        SceneLoader = GetComponent<SceneLoader>();
     }
 
     // Update is called once per frame
@@ -21,7 +24,15 @@ public class GameClear : MonoBehaviour
     {
         enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (enemyObjects.Length == 0)
+        //if (enemyObjects.Length == 0)
+        //{
+       //     Clear();
+       // }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player(Clone)")
         {
             Clear();
         }
@@ -29,9 +40,6 @@ public class GameClear : MonoBehaviour
 
     void Clear()
     {
-        if (m_clearText)
-        {
-            m_clearText.text = "GAME CLEAR";
-        }
+        SceneLoader.LoadScene("result");
     }
 }

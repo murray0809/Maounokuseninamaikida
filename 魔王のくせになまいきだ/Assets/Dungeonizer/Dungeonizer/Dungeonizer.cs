@@ -675,7 +675,7 @@ public class Dungeonizer : MonoBehaviour {
 		if (!makeIt3d) {
             exitPrefab = (GameObject)Resources.Load("stairs_stone_up");
             startPrefab = (GameObject)Resources.Load("Player");
-            end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, Dungeon.goalRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
+            end_point = GameObject.Instantiate (exitPrefab, new Vector3 (Dungeon.goalRoom.x * tileScaling, Dungeon.goalRoom.y * tileScaling, 1), Quaternion.identity) as GameObject;
 			start_point = GameObject.Instantiate (startPrefab, new Vector3 (Dungeon.startRoom.x * tileScaling, Dungeon.startRoom.y * tileScaling, 0), Quaternion.identity) as GameObject;
             
         } else {

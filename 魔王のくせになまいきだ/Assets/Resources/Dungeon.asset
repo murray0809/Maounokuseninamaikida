@@ -15,19 +15,83 @@ MonoBehaviour:
   sheets:
   - name: Dungeons
     list:
-    - minSpawnCount: 2
+    - minSpawnCount: 1
       maxSpawnCount: 4
       spawnByWall: 0
       spawmInTheMiddle: 0
       spawnRotated: 0
       heightFix: 0
-      gameObject: Rider1
-      spawnRoom: 0
-    - minSpawnCount: 2
+      gameObject: Wood Box
+      spawnRoom: 1
+    - minSpawnCount: 1
       maxSpawnCount: 4
       spawnByWall: 0
       spawmInTheMiddle: 0
       spawnRotated: 0
       heightFix: 0
-      gameObject: Rider2
-      spawnRoom: 0
+      gameObject: Wood Box
+      spawnRoom: 2
+    - minSpawnCount: 1
+      maxSpawnCount: 4
+      spawnByWall: 0
+      spawmInTheMiddle: 0
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Wood Box
+      spawnRoom: 3
+    - minSpawnCount: 1
+      maxSpawnCount: 4
+      spawnByWall: 0
+      spawmInTheMiddle: 0
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Wood Box
+      spawnRoom: 4
+    - minSpawnCount: 1
+      maxSpawnCount: 4
+      spawnByWall: 0
+      spawmInTheMiddle: 0
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Wood Box
+      spawnRoom: 5
+    - minSpawnCount: 1
+      maxSpawnCount: 4
+      spawnByWall: 0
+      spawmInTheMiddle: 0
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Wood Box
+      spawnRoom: 6
+    - minSpawnCount: 1
+      maxSpawnCount: 4
+      spawnByWall: 0
+      spawmInTheMiddle: 0
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Wood Box
+      spawnRoom: 7
+    - minSpawnCount: 1
+      maxSpawnCount: 4
+      spawnByWall: 0
+      spawmInTheMiddle: 0
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Wood Box
+      spawnRoom: 8
+    - minSpawnCount: 1
+      maxSpawnCount: 4
+      spawnByWall: 0
+      spawmInTheMiddle: 0
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Wood Box
+      spawnRoom: 9
+    - minSpawnCount: 1
+      maxSpawnCount: 4
+      spawnByWall: 0
+      spawmInTheMiddle: 0
+      spawnRotated: 0
+      heightFix: 0
+      gameObject: Wood Box
+      spawnRoom: 10
