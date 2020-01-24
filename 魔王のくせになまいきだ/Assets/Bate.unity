@@ -3001,7 +3001,6 @@ GameObject:
   m_Component:
   - component: {fileID: 61013611}
   - component: {fileID: 61013614}
-  - component: {fileID: 61013613}
   - component: {fileID: 61013612}
   m_Layer: 0
   m_Name: Attack
@@ -3034,32 +3033,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fd2f6756c17606418bc3c71f5197046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Text1: {fileID: 0}
-  m_Text2: {fileID: 0}
-  m_Text3: {fileID: 0}
-  m_Text4: {fileID: 0}
-  m_Text5: {fileID: 0}
-  m_Text6: {fileID: 0}
-  m_Text7: {fileID: 0}
-  m_Text8: {fileID: 0}
-  m_Text9: {fileID: 0}
-  m_Text10: {fileID: 0}
-  m_Text: {fileID: 0}
-  playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
-    type: 3}
-  enemyController: {fileID: 246976692}
---- !u!114 &61013613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61013610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881f8a79b9a64e14dabdb7e04db44a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Text1: {fileID: 0}
@@ -6547,7 +6520,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 99887851}
-  - component: {fileID: 99887853}
   - component: {fileID: 99887852}
   m_Layer: 0
   m_Name: attack_down
@@ -6596,32 +6568,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &99887853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99887850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881f8a79b9a64e14dabdb7e04db44a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Text1: {fileID: 0}
-  m_Text2: {fileID: 0}
-  m_Text3: {fileID: 0}
-  m_Text4: {fileID: 0}
-  m_Text5: {fileID: 0}
-  m_Text6: {fileID: 0}
-  m_Text7: {fileID: 0}
-  m_Text8: {fileID: 0}
-  m_Text9: {fileID: 0}
-  m_Text10: {fileID: 0}
-  m_Text: {fileID: 0}
-  playerController: {fileID: 1068910504}
-  enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
-    type: 3}
 --- !u!1 &101198115
 GameObject:
   m_ObjectHideFlags: 0
@@ -48057,7 +48003,6 @@ GameObject:
   m_Component:
   - component: {fileID: 902963738}
   - component: {fileID: 902963741}
-  - component: {fileID: 902963740}
   - component: {fileID: 902963739}
   m_Layer: 0
   m_Name: Attack
@@ -48090,32 +48035,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fd2f6756c17606418bc3c71f5197046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Text1: {fileID: 0}
-  m_Text2: {fileID: 0}
-  m_Text3: {fileID: 0}
-  m_Text4: {fileID: 0}
-  m_Text5: {fileID: 0}
-  m_Text6: {fileID: 0}
-  m_Text7: {fileID: 0}
-  m_Text8: {fileID: 0}
-  m_Text9: {fileID: 0}
-  m_Text10: {fileID: 0}
-  m_Text: {fileID: 0}
-  playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
-    type: 3}
-  enemyController: {fileID: 1094567961}
---- !u!114 &902963740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902963737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881f8a79b9a64e14dabdb7e04db44a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Text1: {fileID: 0}
@@ -55992,6 +55911,7 @@ MonoBehaviour:
   attack_left: {fileID: 1808996031}
   attack_up: {fileID: 1957921519}
   attack_down: {fileID: 99887850}
+  attack_right: {fileID: 0}
   m_Text1: {fileID: 0}
   m_Text2: {fileID: 0}
   m_Text3: {fileID: 0}
@@ -88831,7 +88751,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1713617808}
   - component: {fileID: 1713617811}
-  - component: {fileID: 1713617810}
   - component: {fileID: 1713617809}
   m_Layer: 0
   m_Name: Attack
@@ -88864,32 +88783,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fd2f6756c17606418bc3c71f5197046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Text1: {fileID: 0}
-  m_Text2: {fileID: 0}
-  m_Text3: {fileID: 0}
-  m_Text4: {fileID: 0}
-  m_Text5: {fileID: 0}
-  m_Text6: {fileID: 0}
-  m_Text7: {fileID: 0}
-  m_Text8: {fileID: 0}
-  m_Text9: {fileID: 0}
-  m_Text10: {fileID: 0}
-  m_Text: {fileID: 0}
-  playerController: {fileID: 6635311122241629730, guid: cf2e67b5cdd314a4494c69cd10773fbe,
-    type: 3}
-  enemyController: {fileID: 1891548732}
---- !u!114 &1713617810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713617807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881f8a79b9a64e14dabdb7e04db44a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Text1: {fileID: 0}
@@ -93623,7 +93516,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1808996034}
-  - component: {fileID: 1808996033}
   - component: {fileID: 1808996032}
   m_Layer: 0
   m_Name: attack_left
@@ -93658,32 +93550,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1808996033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808996031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881f8a79b9a64e14dabdb7e04db44a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Text1: {fileID: 0}
-  m_Text2: {fileID: 0}
-  m_Text3: {fileID: 0}
-  m_Text4: {fileID: 0}
-  m_Text5: {fileID: 0}
-  m_Text6: {fileID: 0}
-  m_Text7: {fileID: 0}
-  m_Text8: {fileID: 0}
-  m_Text9: {fileID: 0}
-  m_Text10: {fileID: 0}
-  m_Text: {fileID: 0}
-  playerController: {fileID: 1068910504}
-  enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
-    type: 3}
 --- !u!4 &1808996034
 Transform:
   m_ObjectHideFlags: 0
@@ -103482,7 +103348,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1957921522}
-  - component: {fileID: 1957921521}
   - component: {fileID: 1957921520}
   m_Layer: 0
   m_Name: attack_up
@@ -103517,32 +103382,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1957921521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957921519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881f8a79b9a64e14dabdb7e04db44a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Text1: {fileID: 0}
-  m_Text2: {fileID: 0}
-  m_Text3: {fileID: 0}
-  m_Text4: {fileID: 0}
-  m_Text5: {fileID: 0}
-  m_Text6: {fileID: 0}
-  m_Text7: {fileID: 0}
-  m_Text8: {fileID: 0}
-  m_Text9: {fileID: 0}
-  m_Text10: {fileID: 0}
-  m_Text: {fileID: 0}
-  playerController: {fileID: 1068910504}
-  enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
-    type: 3}
 --- !u!4 &1957921522
 Transform:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ TagManager:
   - Text9
   - Text10
   - Item SPEED
+  - attack_left
   layers:
   - Default
   - TransparentFX
