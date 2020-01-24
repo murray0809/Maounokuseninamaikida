@@ -21,13 +21,13 @@ MonoBehaviour:
       spawmInTheMiddle: 0
       spawnRotated: 0
       heightFix: 0
-      gameObject: Rider1
+      gameObject: Wood Chest
       spawnRoom: 0
-    - minSpawnCount: 2
-      maxSpawnCount: 4
+    - minSpawnCount: 0
+      maxSpawnCount: 0
       spawnByWall: 0
       spawmInTheMiddle: 0
       spawnRotated: 0
       heightFix: 0
-      gameObject: Rider2
+      gameObject: 
       spawnRoom: 0

@@ -16,7 +16,8 @@ public class Box : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        float y = this.transform.position.y - 0.5f;
+        this.transform.position = new Vector3(this.transform.position.x, y, this.transform.position.z);
     }
 
     // Update is called once per frame
