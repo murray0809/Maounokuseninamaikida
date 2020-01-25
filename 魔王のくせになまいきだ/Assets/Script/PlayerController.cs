@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
         m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
 
-        attack_left = GameObject.FindWithTag("attack_left");
+        attack_left = GameObject.Find("attack_left");
 
         Hp = 10;
         step = 2f;
@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
         attack_right.SetActive(true);
         Debug.Log("攻撃した");
     }
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Item SPEED")
         {
@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour
     void Ray()
     {
  
-        int layerMask = LayerMask.GetMask(new string[] { "wall", "Enemy" });
+        int layerMask = LayerMask.GetMask(new string[] { "wall", "Box" });
         Ray2D rayW = new Ray2D(this.transform.position + new Vector3(0, 0.5f,0), transform.up);
         Ray2D rayS = new Ray2D(this.transform.position + new Vector3(0, -0.5f, 0), transform.up * -1);
         Ray2D rayD = new Ray2D(this.transform.position + new Vector3(0.5f, 0, 0), transform.right);
