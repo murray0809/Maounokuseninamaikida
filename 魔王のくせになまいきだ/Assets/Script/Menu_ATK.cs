@@ -17,7 +17,7 @@ public class Menu_ATK : MonoBehaviour
     {
         if (m_Menu_ATK)
         {
-            m_Menu_ATK.text = "ATK:" + PlayerController.Atk;
+            m_Menu_ATK.text = "SPEED:" + PlayerController.step;
         }
     }
 }

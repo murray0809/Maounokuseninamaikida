@@ -28,7 +28,7 @@ public class EnemyController : EnemyObject
 
     private void Start()
     {
-        Hp = 10;
+        Hp = 1;
         animator = GetComponent<Animator>();
     }
 
