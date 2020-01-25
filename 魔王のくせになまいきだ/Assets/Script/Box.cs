@@ -44,92 +44,93 @@ public class Box : MonoBehaviour
         if (collision.tag == "Attack")
         {
             t = this.gameObject.transform;
-            int k = Random.Range(1, 5);
-            if (k == 1)
-            {
-                item = m_item1;
-            }
-            else if (k == 2)
-            {
-                item = m_item2;
-            }
-            else if (k == 3)
-            {
-                item = m_item3;
-            }
-            else if (k == 4)
-            {
-                item = m_item4;
-            }
-            else if (k == 5)
-            {
-                item = m_item5;
-            }
+            Instantiate(m_item1, t);
+            //int k = Random.Range(1, 5);
+            //if (k == 1)
+            //{
+            //    item = m_item1;
+            //}
+            //else if (k == 2)
+            //{
+            //    item = m_item2;
+            //}
+            //else if (k == 3)
+            //{
+            //    item = m_item3;
+            //}
+            //else if (k == 4)
+            //{
+            //    item = m_item4;
+            //}
+            //else if (k == 5)
+            //{
+            //    item = m_item5;
+            //}
 
-            for (int j = Random.Range(1, 4), r = 1; r <= j; r++)
-            {
-                int i = Random.Range(1, 10);
+            //for (int j = Random.Range(1, 4), r = 1; r <= j; r++)
+            //{
+            //    int i = Random.Range(1, 10);
 
 
-                for (int l = 0; l <= j; l++)
-                {
-                    if (vs[l] == i)
-                    {
-                        y = true;
-                    }
-                }
-                if (y)
-                {
-                    continue;
-                }
-                vs[j] = i;
+            //    for (int l = 0; l <= j; l++)
+            //    {
+            //        if (vs[l] == i)
+            //        {
+            //            y = true;
+            //        }
+            //    }
+            //    if (y)
+            //    {
+            //        continue;
+            //    }
+            //    vs[j] = i;
 
-                if (i == 1)
-                {
-                    t.position += new Vector3(-1.0f, -1.0f);
-                    Instantiate(item, t);
-                }
-                else if (i == 2)
-                {
-                    t.position += new Vector3(0, -1.0f);
-                    Instantiate(item, t);
-                }
-                else if (i == 3)
-                {
-                    t.position += new Vector3(1.0f, -1.0f);
-                    Instantiate(item, t);
-                }
-                else if (i == 4)
-                {
-                    t.position += new Vector3(-1.0f, 0);
-                    Instantiate(item, t);
-                }
-                else if (i == 5)
-                {
-                    Instantiate(item, t);
-                }
-                else if (i == 6)
-                {
-                    t.position += new Vector3(1.0f, 0);
-                    Instantiate(item, t);
-                }
-                else if (i == 7)
-                {
-                    t.position += new Vector3(-1.0f, 1.0f);
-                    Instantiate(item, t);
-                }
-                else if (i == 8)
-                {
-                    t.position += new Vector3(0, 1.0f);
-                    Instantiate(item, t);
-                }
-                else if (i == 9)
-                {
-                    t.position += new Vector3(1.0f, 1.0f);
-                    Instantiate(item, t);
-                }
-            }
-
+            //    if (i == 1)
+            //    {
+            //        t.position += new Vector3(-1.0f, -1.0f);
+            //        Instantiate(item, t);
+            //    }
+            //    else if (i == 2)
+            //    {
+            //        t.position += new Vector3(0, -1.0f);
+            //        Instantiate(item, t);
+            //    }
+            //    else if (i == 3)
+            //    {
+            //        t.position += new Vector3(1.0f, -1.0f);
+            //        Instantiate(item, t);
+            //    }
+            //    else if (i == 4)
+            //    {
+            //        t.position += new Vector3(-1.0f, 0);
+            //        Instantiate(item, t);
+            //    }
+            //    else if (i == 5)
+            //    {
+            //        Instantiate(item, t);
+            //    }
+            //    else if (i == 6)
+            //    {
+            //        t.position += new Vector3(1.0f, 0);
+            //        Instantiate(item, t);
+            //    }
+            //    else if (i == 7)
+            //    {
+            //        t.position += new Vector3(-1.0f, 1.0f);
+            //        Instantiate(item, t);
+            //    }
+            //    else if (i == 8)
+            //    {
+            //        t.position += new Vector3(0, 1.0f);
+            //        Instantiate(item, t);
+            //    }
+            //    else if (i == 9)
+            //    {
+            //        t.position += new Vector3(1.0f, 1.0f);
+            //        Instantiate(item, t);
+            //    }
+            //}
+            gameObject.transform.parent = null;
             Destroy(this.gameObject);
         }
     }
