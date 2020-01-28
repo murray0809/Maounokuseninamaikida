@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7164035780662321184}
   - component: {fileID: 2778922737947695564}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: dot_chara_01_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 773199006810646701}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5890354313593303892}
   - component: {fileID: 4312628646518385776}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: attack_right
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7313917376357779817}
   - component: {fileID: 9114395637841939779}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: dot_chara_01_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3784999833665123289}
   - component: {fileID: 4440775923341281916}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: attack_left
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!82 &7427398839618708412
 AudioSource:
@@ -616,7 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3779114143981631179}
   - component: {fileID: 3998247308404523828}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: attack_up
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6538601923540594384}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3250612911577080757}
   - component: {fileID: 6332606447699681695}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: dot_chara_01_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,7 +784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6258751805696218692}
   - component: {fileID: 8295005625080550971}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: attack_down
   m_TagString: Attack
   m_Icon: {fileID: 0}
@@ -841,7 +841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8918565138594193642}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853173546803011103}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6084927490469026521}
   - component: {fileID: 8404955294732554632}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: dot_chara_01_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}

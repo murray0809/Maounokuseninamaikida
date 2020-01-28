@@ -5,10 +5,10 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     [SerializeField] GameObject m_item1 = default;
-    [SerializeField] GameObject m_item2 = default;
-    [SerializeField] GameObject m_item3 = default;
-    [SerializeField] GameObject m_item4 = default;
-    [SerializeField] GameObject m_item5 = default;
+    //[SerializeField] GameObject m_item2 = default;
+    //[SerializeField] GameObject m_item3 = default;
+    //[SerializeField] GameObject m_item4 = default;
+    //[SerializeField] GameObject m_item5 = default;
     GameObject item;
     Transform t;
     int[] vs = new int[4];
@@ -43,7 +43,7 @@ public class Box : MonoBehaviour
     {
         if (collision.tag == "Attack")
         {
-            t = this.gameObject.transform;
+            t = transform;
             Instantiate(m_item1, t);
             //int k = Random.Range(1, 5);
             //if (k == 1)
@@ -130,8 +130,10 @@ public class Box : MonoBehaviour
             //        Instantiate(item, t);
             //    }
             //}
-            gameObject.transform.parent = null;
-            Destroy(this.gameObject);
+            item = transform.Find("Item SPEED(Clone)").gameObject;
+            item.transform.parent = null;
+            Destroy(gameObject);
+            
         }
     }
 }
