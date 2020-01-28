@@ -3,16 +3,16 @@ using System.Collections;
 
 public class Item : MonoBehaviour
 {
-    void start()
+    private void Start()
     {
-        gameObject.transform.parent = null;
+        transform.parent = null;
     }
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        
         if (col.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
+
 }

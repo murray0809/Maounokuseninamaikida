@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5261971865259642366}
   - component: {fileID: -8546958027613777345}
   - component: {fileID: 4936194779681096666}
+  - component: {fileID: 1267415543953309241}
   m_Layer: 0
   m_Name: stairs_stone_up
   m_TagString: Untagged
@@ -68,9 +69,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1992023743
+  m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300508, guid: 47c6a039472216d4384b29e942993912, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,3 +134,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_clearText: {fileID: 0}
+--- !u!114 &1267415543953309241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dda08d2c8e800f4e86d6bdd244c9ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,33 +10,40 @@ public class GameClear : MonoBehaviour
     [SerializeField] Text m_clearText = default;
 
     SceneLoader SceneLoader;
-
+    
     GameObject[] enemyObjects;
-
+    GameObject player;
     void Start()
     {
         m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
         SceneLoader = GetComponent<SceneLoader>();
+        player = GameObject.Find("Player(Clone)");
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
 
         //if (enemyObjects.Length == 0)
         //{
-       //     Clear();
-       // }
+        //     Clear();
+        // }
+        if (player.transform.position.x == )
+        {
+
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("atari");
         if (collision.gameObject.name == "Player(Clone)")
         {
+            Debug.Log("clear");
             Clear();
         }
     }
+
 
     void Clear()
     {
