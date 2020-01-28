@@ -33,7 +33,7 @@ public class PlayerAnim : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
         {
             transform.localScale = new Vector3(-1, 1, 1);
-            anim.SetBool("walk", true);
+            anim.SetBool("walk right", true);
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -51,12 +51,12 @@ public class PlayerAnim : MonoBehaviour
             anim.SetBool("walk back", true);
         }
         
-        else if (VerticalKey > 0 && Input.GetKey(KeyCode.LeftControl))
-        {
-            transform.localScale = new Vector3(3, 3, 1);
-            anim.SetBool("walk back", true);
-            anim.SetBool("attack back", true);
-        }
+        //else if (VerticalKey > 0 && Input.GetKey(KeyCode.LeftControl))
+        //{
+        //    transform.localScale = new Vector3(3, 3, 1);
+        //    //anim.SetBool("walk back", true);
+        //    anim.SetBool("attack back", true);
+        //}
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             anim.SetBool("idle right", true);
@@ -86,6 +86,7 @@ public class PlayerAnim : MonoBehaviour
             anim.SetBool("idle down", false);
             anim.SetBool("attack up", false);
             anim.SetBool("attack down", false);
+            anim.SetBool("walk right", false);
         }
     }
 }
