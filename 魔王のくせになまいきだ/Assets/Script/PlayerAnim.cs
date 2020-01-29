@@ -32,7 +32,7 @@ public class PlayerAnim : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
             anim.SetBool("walk right", true);
         }
         else if (Input.GetKey(KeyCode.A))
