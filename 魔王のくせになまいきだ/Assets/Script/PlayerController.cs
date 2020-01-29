@@ -75,8 +75,8 @@ public class PlayerController : MonoBehaviour
 
         m_Text = GameObject.FindWithTag("Text").GetComponentInChildren<Text>();
 
-        m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
-        m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
+        //m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
+       // m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
 
         attack_left = GameObject.Find("attack_left");
 
