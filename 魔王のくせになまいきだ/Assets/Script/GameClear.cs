@@ -17,13 +17,17 @@ public class GameClear : MonoBehaviour
     {
         m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
         SceneLoader = GetComponent<SceneLoader>();
-        player = GameObject.Find("Player(Clone)");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        player = GameObject.Find("Player(Clone)");
+        if ((transform.position.x == player.transform.position.x) && (transform.position.y == player.transform.position.y))
+        {
+            Clear();
+        }
         //if (enemyObjects.Length == 0)
         //{
         //     Clear();

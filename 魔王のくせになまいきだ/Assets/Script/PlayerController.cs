@@ -194,10 +194,10 @@ public class PlayerController : MonoBehaviour
         attack_right.SetActive(true);
         Debug.Log("攻撃した");
     }
-    private void OnTriggerEnter2D(Collider2D col)
+
+    public void ItemSpeed()
     {
-        if (col.gameObject.tag == "Item SPEED")
-        {
+        
             step = step + (float)0.5;
             Debug.Log("SPEEDが0.5増えた");
             audioSource.PlayOneShot(m_item);
@@ -206,8 +206,10 @@ public class PlayerController : MonoBehaviour
                 m_Text.text = " " + "SPEEDが0.5増えた";
                 LogSet();
             }
-        }
+        
     }
+       
+    
     void LogSet()
     {
         m_Text1.text = m_Text2.text;
