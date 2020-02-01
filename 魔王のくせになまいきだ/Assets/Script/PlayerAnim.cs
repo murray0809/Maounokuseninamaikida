@@ -43,7 +43,7 @@ public class PlayerAnim : MonoBehaviour
         else if (Input.GetKey(KeyCode.S))
         {
             transform.localScale = new Vector3(1, 1, 1);
-            anim.SetBool("walk", true);
+            anim.SetBool("walk down", true);
         }
         else if (Input.GetKey(KeyCode.W))
         {
@@ -87,6 +87,7 @@ public class PlayerAnim : MonoBehaviour
             anim.SetBool("attack up", false);
             anim.SetBool("attack down", false);
             anim.SetBool("walk right", false);
+            anim.SetBool("walk down", false);
         }
     }
 }
