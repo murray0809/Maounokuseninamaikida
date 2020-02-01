@@ -597,7 +597,7 @@ public class Dungeonizer : MonoBehaviour {
 					created_tile = GameObject.Instantiate (floor, tile_location, Quaternion.identity) as GameObject;
 				}
 				
-				if ( Dungeon.walls.Contains(tile)) {
+				if (Dungeon.walls.Contains(tile)) {
 					GameObject wallPrefabToUse = wallPrefab;
 					Room room = Dungeon.map[x,y].room;
 					if(room != null){
