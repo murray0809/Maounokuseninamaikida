@@ -9,7 +9,14 @@ public class TransformController : MonoBehaviour
     {
         int x = (int)transform.position.x;
         int y = (int)transform.position.y;
-
-        this.transform.position = new Vector3((float)x, (float)y, -0.1f);
+        if (gameObject.name == "Wood Box(Clone)")
+        {
+            this.transform.position = new Vector3((float)x + 0.1f, (float)y - 0.25f, -0.1f);
+        }
+        else
+        {
+            this.transform.position = new Vector3((float)x, (float)y, -0.1f);
+        }
+        
     }
 }
