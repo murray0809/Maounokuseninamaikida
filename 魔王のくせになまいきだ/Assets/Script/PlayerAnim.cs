@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerAnim : MonoBehaviour
 {
     private Animator anim = null;
+
+    
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -14,6 +17,10 @@ public class PlayerAnim : MonoBehaviour
     {
         float horizontalKey = Input.GetAxis("Horizontal");
         float VerticalKey = Input.GetAxis("Vertical");
+        bool D = Input.GetKey(KeyCode.D);
+        bool A = Input.GetKey(KeyCode.A);
+        bool S = Input.GetKey(KeyCode.S);
+        bool W = Input.GetKey(KeyCode.W);
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.LeftArrow))
         {
             anim.SetBool("attack", true);
@@ -30,33 +37,38 @@ public class PlayerAnim : MonoBehaviour
         {
             anim.SetBool("attack down", true);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (D)
         {
             transform.localScale = new Vector3(1, 1, 1);
             anim.SetBool("walk right", true);
+            anim.SetBool("walk left", false);
+            anim.SetBool("walk down", false);
+            anim.SetBool("walk back", false);
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (A)
         {
             transform.localScale = new Vector3(1, 1, 1);
-            anim.SetBool("walk", true);
+            anim.SetBool("walk left", true);
+            anim.SetBool("walk right", false);
+            anim.SetBool("walk down", false);
+            anim.SetBool("walk back", false);
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (S)
         {
             transform.localScale = new Vector3(1, 1, 1);
             anim.SetBool("walk down", true);
+            anim.SetBool("walk right", false);
+            anim.SetBool("walk left", false);
+            anim.SetBool("walk back", false);
         }
-        else if (Input.GetKey(KeyCode.W))
+        else if (W)
         {
             transform.localScale = new Vector3(1, 1, 1);
             anim.SetBool("walk back", true);
+            anim.SetBool("walk right", false);
+            anim.SetBool("walk down", false);
+            anim.SetBool("walk left", false);
         }
-        
-        //else if (VerticalKey > 0 && Input.GetKey(KeyCode.LeftControl))
-        //{
-        //    transform.localScale = new Vector3(3, 3, 1);
-        //    //anim.SetBool("walk back", true);
-        //    anim.SetBool("attack back", true);
-        //}
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             anim.SetBool("idle right", true);
@@ -75,7 +87,7 @@ public class PlayerAnim : MonoBehaviour
         }
         else
         {
-            anim.SetBool("walk", false);
+            anim.SetBool("walk left", false);
             anim.SetBool("walk back", false);
             anim.SetBool("attack", false);
             anim.SetBool("attack back", false);
