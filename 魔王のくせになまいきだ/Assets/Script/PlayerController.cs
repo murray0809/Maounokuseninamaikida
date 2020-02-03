@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     bool objA = true;
     bool objD = true;
 
-    public EnemyController enemyController;
+    //public EnemyController enemyController;
 
     void Start()
     {

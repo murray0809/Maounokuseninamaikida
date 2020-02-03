@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         for (int x = 0; x < EnemyObj.Length; ++x)
         {
             yield return new WaitForSeconds(TurnDelay);
-            EnemyObj[x].GetComponent<EnemyController>().MoveEnemy();
+            //EnemyObj[x].GetComponent<EnemyController>().MoveEnemy();
         }
 
         SetCurrentState(GameState.TurnEnd);

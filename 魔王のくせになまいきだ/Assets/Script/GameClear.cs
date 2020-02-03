@@ -28,10 +28,10 @@ public class GameClear : MonoBehaviour
         //{
         //     Clear();
         // }
-        if (player.transform.position.x == )
-        {
+        //if (player.transform.position.x == )
+        //{
 
-        }
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
