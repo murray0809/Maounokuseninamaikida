@@ -8253,8 +8253,6 @@ MonoBehaviour:
   MOVEY: {x: 0, y: 1, z: 0}
   target: {x: 0, y: 0, z: 0}
   prevPos: {x: 0, y: 0, z: 0}
-  enemyController: {fileID: 6958706868946117337, guid: 3239adb417424154daab75e6d46f1a5c,
-    type: 3}
 --- !u!114 &164716736
 MonoBehaviour:
   m_ObjectHideFlags: 0

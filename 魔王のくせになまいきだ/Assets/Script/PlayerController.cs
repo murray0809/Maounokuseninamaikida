@@ -59,8 +59,6 @@ public class PlayerController : MonoBehaviour
     bool Left = false;
     bool Right = false;
 
-    public EnemyController enemyController;
-
     void Start()
     {
         m_rb2d = GetComponent<Rigidbody2D>();
@@ -101,6 +99,11 @@ public class PlayerController : MonoBehaviour
         bool S = Input.GetKey(KeyCode.S);
         bool W = Input.GetKey(KeyCode.W);
 
+        bool LeftArrow = Input.GetKey(KeyCode.LeftArrow);
+        bool RightArrow = Input.GetKey(KeyCode.RightArrow);
+        bool UpArrow = Input.GetKey(KeyCode.UpArrow);
+        bool DownArrow = Input.GetKey(KeyCode.DownArrow);
+
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
             return;
@@ -135,28 +138,28 @@ public class PlayerController : MonoBehaviour
             Attack_Down();
             audioSource.PlayOneShot(m_attack);
         }
-        else if (D)
+        else if (D || RightArrow)
         {
             Up = false;
             Down = false;
             Left = false;
             Right = true;
         }
-        else if (A)
+        else if (A || LeftArrow)
         {
             Up = false;
             Down = false;
             Left = true;
             Right = false;
         }
-        else if (W)
+        else if (W || UpArrow)
         {
             Up = true;
             Down = false;
             Left = false;
             Right = false;
         }
-        else if (S)
+        else if (S || DownArrow)
         {
             Up = false;
             Down = true;
