@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerAnim : MonoBehaviour
 {
     private Animator anim = null;
-
-    
+    bool Up = false;
+    bool Down = false;
+    bool Left = false;
+    bool Right = false;
 
     void Start()
     {
@@ -15,35 +17,29 @@ public class PlayerAnim : MonoBehaviour
 
     void Update()
     {
-        float horizontalKey = Input.GetAxis("Horizontal");
-        float VerticalKey = Input.GetAxis("Vertical");
         bool D = Input.GetKey(KeyCode.D);
         bool A = Input.GetKey(KeyCode.A);
         bool S = Input.GetKey(KeyCode.S);
         bool W = Input.GetKey(KeyCode.W);
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.LeftArrow))
-        {
-            anim.SetBool("attack", true);
-        }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.RightArrow))
-        {
-            anim.SetBool("attack right", true);
-        }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.UpArrow))
-        {
-            anim.SetBool("attack up", true);
-        }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightControl) && Input.GetKey(KeyCode.DownArrow))
-        {
-            anim.SetBool("attack down", true);
-        }
-        else if (D)
+        
+        bool LeftControl = Input.GetKeyDown(KeyCode.LeftControl);
+        bool RightControl = Input.GetKeyDown(KeyCode.RightControl);
+        bool LeftArrow = Input.GetKey(KeyCode.LeftArrow);
+        bool RightArrow = Input.GetKey(KeyCode.RightArrow);
+        bool UpArrow = Input.GetKey(KeyCode.UpArrow);
+        bool DownArrow = Input.GetKey(KeyCode.DownArrow);
+
+        if (D)
         {
             transform.localScale = new Vector3(1, 1, 1);
             anim.SetBool("walk right", true);
             anim.SetBool("walk left", false);
             anim.SetBool("walk down", false);
             anim.SetBool("walk back", false);
+            Up = false;
+            Down = false;
+            Left = false;
+            Right = true;
         }
         else if (A)
         {
@@ -52,6 +48,10 @@ public class PlayerAnim : MonoBehaviour
             anim.SetBool("walk right", false);
             anim.SetBool("walk down", false);
             anim.SetBool("walk back", false);
+            Up = false;
+            Down = false;
+            Left = true;
+            Right = false;
         }
         else if (S)
         {
@@ -60,6 +60,10 @@ public class PlayerAnim : MonoBehaviour
             anim.SetBool("walk right", false);
             anim.SetBool("walk left", false);
             anim.SetBool("walk back", false);
+            Up = false;
+            Down = true;
+            Left = false;
+            Right = false;
         }
         else if (W)
         {
@@ -68,22 +72,58 @@ public class PlayerAnim : MonoBehaviour
             anim.SetBool("walk right", false);
             anim.SetBool("walk down", false);
             anim.SetBool("walk left", false);
+            Up = true;
+            Down = false;
+            Left = false;
+            Right = false;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (RightArrow)
         {
             anim.SetBool("idle right", true);
+            Up = false;
+            Down = false;
+            Left = false;
+            Right = true;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (LeftArrow)
         {
             anim.SetBool("idle left", true);
+            Up = false;
+            Down = false;
+            Left = true;
+            Right = false;
         }
-        else if (Input.GetKey(KeyCode.UpArrow))
+        else if (UpArrow)
         {
             anim.SetBool("idle up", true);
+            Up = true;
+            Down = false;
+            Left = false;
+            Right = false;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (DownArrow)
         {
             anim.SetBool("idle down", true);
+            Up = false;
+            Down = true;
+            Left = false;
+            Right = false;
+        }
+        else if ((LeftControl || RightControl) && Left)
+        {
+            anim.SetBool("attack", true);
+        }
+        else if ((LeftControl || RightControl) && Right)
+        {
+            anim.SetBool("attack right", true);
+        }
+        else if ((LeftControl || RightControl) && Up)
+        {
+            anim.SetBool("attack up", true);
+        }
+        else if ((LeftControl || RightControl) && Down)
+        {
+            anim.SetBool("attack down", true);
         }
         else
         {
