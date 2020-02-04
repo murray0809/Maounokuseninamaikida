@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     bool objA = true;
     bool objD = true;
 
+
     bool Up = false;
     bool Down = false;
     bool Left = false;
