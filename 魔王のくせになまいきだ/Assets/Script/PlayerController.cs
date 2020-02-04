@@ -53,7 +53,13 @@ public class PlayerController : MonoBehaviour
     bool objA = true;
     bool objD = true;
 
-    //public EnemyController enemyController;
+
+    bool Up = false;
+    bool Down = false;
+    bool Left = false;
+    bool Right = false;
+
+    public EnemyController enemyController;
 
     void Start()
     {
@@ -75,8 +81,8 @@ public class PlayerController : MonoBehaviour
 
         m_Text = GameObject.FindWithTag("Text").GetComponentInChildren<Text>();
 
-        m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
-        m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
+        //m_messageText = GameObject.FindWithTag("MessageText").GetComponentInChildren<Text>();
+       // m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
 
         attack_left = GameObject.Find("attack_left");
 
@@ -87,6 +93,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool LeftControl = Input.GetKeyDown(KeyCode.LeftControl);
+        bool RightControl = Input.GetKeyDown(KeyCode.RightControl);
+
+        bool D = Input.GetKey(KeyCode.D);
+        bool A = Input.GetKey(KeyCode.A);
+        bool S = Input.GetKey(KeyCode.S);
+        bool W = Input.GetKey(KeyCode.W);
+
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
             return;
@@ -101,25 +115,53 @@ public class PlayerController : MonoBehaviour
         }
         Move();
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.LeftArrow))
+        if ((LeftControl || RightControl) && Left)
         {
             Attack_Left();
             audioSource.PlayOneShot(m_attack);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftControl)&& Input.GetKey(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.RightArrow))
+        else if ((LeftControl || RightControl) && Right)
         {
             Attack_Right();
             audioSource.PlayOneShot(m_attack);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.UpArrow))
+        else if ((LeftControl || RightControl) && Up)
         {
             Attack_Up();
             audioSource.PlayOneShot(m_attack);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightControl) && Input.GetKey(KeyCode.DownArrow))
+        else if ((LeftControl || RightControl) && Down)
         {
             Attack_Down();
             audioSource.PlayOneShot(m_attack);
+        }
+        else if (D)
+        {
+            Up = false;
+            Down = false;
+            Left = false;
+            Right = true;
+        }
+        else if (A)
+        {
+            Up = false;
+            Down = false;
+            Left = true;
+            Right = false;
+        }
+        else if (W)
+        {
+            Up = true;
+            Down = false;
+            Left = false;
+            Right = false;
+        }
+        else if (S)
+        {
+            Up = false;
+            Down = true;
+            Left = false;
+            Right = false;
         }
         else
         {
@@ -143,21 +185,37 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D) && objD)
         {
+            Up = false;
+            Down = false;
+            Left = false;
+            Right = true;
             target = transform.position + MOVEX;
             return;
         }
         if (Input.GetKey(KeyCode.A) && objA)
         {
+            Up = false;
+            Down = false;
+            Left = true;
+            Right = false;
             target = transform.position - MOVEX;
             return;
         }
         if (Input.GetKey(KeyCode.W) && objW)
         {
+            Up = true;
+            Down = false;
+            Left = false;
+            Right = false;
             target = transform.position + MOVEY;
             return;
         }
         if (Input.GetKey(KeyCode.S) && objS)
         {
+            Up = false;
+            Down = true;
+            Left = false;
+            Right = false;
             target = transform.position - MOVEY;
             return;
         }
@@ -194,10 +252,10 @@ public class PlayerController : MonoBehaviour
         attack_right.SetActive(true);
         Debug.Log("攻撃した");
     }
-    private void OnTriggerEnter2D(Collider2D col)
+
+    public void ItemSpeed()
     {
-        if (col.gameObject.tag == "Item SPEED")
-        {
+        
             step = step + (float)0.5;
             Debug.Log("SPEEDが0.5増えた");
             audioSource.PlayOneShot(m_item);
@@ -206,8 +264,10 @@ public class PlayerController : MonoBehaviour
                 m_Text.text = " " + "SPEEDが0.5増えた";
                 LogSet();
             }
-        }
+        
     }
+       
+    
     void LogSet()
     {
         m_Text1.text = m_Text2.text;

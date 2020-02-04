@@ -12,11 +12,10 @@ public class Box : MonoBehaviour
     GameObject item;
     Transform t;
     int[] vs = new int[4];
-    bool y = false;
+
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
