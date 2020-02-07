@@ -9,14 +9,13 @@ public class GameClear : MonoBehaviour
 
     [SerializeField] Text m_clearText = default;
 
-    SceneLoader SceneLoader;
+    FadeManager Fade;
     
     GameObject[] enemyObjects;
     GameObject player;
     void Start()
     {
         m_clearText = GameObject.FindWithTag("ClearText").GetComponentInChildren<Text>();
-        SceneLoader = GetComponent<SceneLoader>();
         
     }
 
@@ -51,6 +50,6 @@ public class GameClear : MonoBehaviour
 
     void Clear()
     {
-        SceneLoader.LoadScene("result");
+        FadeManager.FadeOut(2);
     }
 }

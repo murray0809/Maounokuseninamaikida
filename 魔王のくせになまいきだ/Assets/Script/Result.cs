@@ -7,6 +7,7 @@ public class Result : MonoBehaviour
     SceneLoader loader;
     private void Start()
     {
+        FadeManager.FadeIn();
         loader = GetComponent<SceneLoader>();
     }
     // Update is called once per frame
