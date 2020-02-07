@@ -51,6 +51,6 @@ public class GameClear : MonoBehaviour
 
     void Clear()
     {
-        SceneLoader.LoadScene("result");
+        FadeManager.FadeOut(2);
     }
 }

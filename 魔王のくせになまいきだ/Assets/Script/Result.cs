@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Result : MonoBehaviour
 {
-    SceneLoader loader;
     private void Start()
     {
-        loader = GetComponent<SceneLoader>();
+        FadeManager.FadeIn();
     }
     // Update is called once per frame
     void Update()
     {
         if (Input.anyKeyDown)
         {
-            loader.LoadScene("Title");
+            FadeManager.FadeOut(0);
         }
     }
 }
