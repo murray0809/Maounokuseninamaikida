@@ -8,25 +8,25 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/game.unity
+    guid: ddf5af1739a51e74da1a882d67501de2
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: f19e527c0242d0c45a41e62b86853c5f
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: f399fa350d23d2e489609213844d5566
-  - enabled: 1
-    path: Assets/Scenes/game.unity
-    guid: ddf5af1739a51e74da1a882d67501de2
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: c43c0516975dcd24f801e3cb0dc554df
-  - enabled: 1
-    path: Assets/Scenes/result.unity
-    guid: 4068a56e5ea97f24c9b23156bfae85f4
-  - enabled: 0
     path: Assets/Bate.unity
     guid: 069b041feb5625f4e92d459630e73239
   - enabled: 0
     path: Assets/Menu.unity
     guid: 3fdfa6edc9f2c5a4c86e12a919217c2e
+  - enabled: 1
+    path: Assets/Scenes/result.unity
+    guid: 4068a56e5ea97f24c9b23156bfae85f4
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: f399fa350d23d2e489609213844d5566
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: c43c0516975dcd24f801e3cb0dc554df
   m_configObjects: {}
