@@ -99,10 +99,10 @@ public class PlayerController : MonoBehaviour
         bool S = Input.GetKey(KeyCode.S);
         bool W = Input.GetKey(KeyCode.W);
 
-        bool LeftArrow = Input.GetKey(KeyCode.LeftArrow);
-        bool RightArrow = Input.GetKey(KeyCode.RightArrow);
-        bool UpArrow = Input.GetKey(KeyCode.UpArrow);
-        bool DownArrow = Input.GetKey(KeyCode.DownArrow);
+        bool LeftArrow = Input.GetKeyDown(KeyCode.LeftArrow);
+        bool RightArrow = Input.GetKeyDown(KeyCode.RightArrow);
+        bool UpArrow = Input.GetKeyDown(KeyCode.UpArrow);
+        bool DownArrow = Input.GetKeyDown(KeyCode.DownArrow);
 
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
