@@ -80,6 +80,9 @@ public class PlayerAnim : MonoBehaviour
         else if (RightArrow)
         {
             anim.SetBool("idle right", true);
+            anim.SetBool("idle left", false);
+            anim.SetBool("idle up", false);
+            anim.SetBool("idle down", false);
             Up = false;
             Down = false;
             Left = false;
@@ -88,6 +91,9 @@ public class PlayerAnim : MonoBehaviour
         else if (LeftArrow)
         {
             anim.SetBool("idle left", true);
+            anim.SetBool("idle right", false);
+            anim.SetBool("idle up", false);
+            anim.SetBool("idle down", false);
             Up = false;
             Down = false;
             Left = true;
@@ -96,6 +102,9 @@ public class PlayerAnim : MonoBehaviour
         else if (UpArrow)
         {
             anim.SetBool("idle up", true);
+            anim.SetBool("idle left", false);
+            anim.SetBool("idle right", false);
+            anim.SetBool("idle down", false);
             Up = true;
             Down = false;
             Left = false;
@@ -104,6 +113,9 @@ public class PlayerAnim : MonoBehaviour
         else if (DownArrow)
         {
             anim.SetBool("idle down", true);
+            anim.SetBool("idle up", false);
+            anim.SetBool("idle left", false);
+            anim.SetBool("idle right", false);
             Up = false;
             Down = true;
             Left = false;
